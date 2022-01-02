@@ -1,3 +1,5 @@
+import 'package:ecommerceapp/presentationLayer/screens/on_boarding_screen/on_boarding_screen.dart';
+import 'package:ecommerceapp/themes/themes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,8 +11,10 @@ class ShopApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: Themes.lightTheme,
       debugShowCheckedModeBanner: false,
+      home: OnBoardingScreen(),
     );
   }
 }
