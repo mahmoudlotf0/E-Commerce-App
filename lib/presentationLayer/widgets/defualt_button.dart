@@ -1,3 +1,5 @@
+import 'package:google_fonts/google_fonts.dart';
+
 import '../../constans/constans.dart';
 import '../../constans/size_config.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +13,7 @@ class DefualtButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
       child: SizedBox(
         width: double.infinity,
-        height: getProportionateScreenHeight(50),
+        height: getProportionateScreenHeight(60),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
@@ -19,7 +21,13 @@ class DefualtButton extends StatelessWidget {
             ),
             primary: kPrimaryColor,
           ),
-          child: const Text('Continue'),
+          child: Text('Continue',
+              style: GoogleFonts.muli(
+                textStyle: TextStyle(
+                  fontSize: getProportionateScreenWidth(20),
+                  color: kPrimaryLightColor,
+                ),
+              )),
           onPressed: () {},
         ),
       ),
