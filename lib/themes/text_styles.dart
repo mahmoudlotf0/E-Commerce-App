@@ -1,5 +1,5 @@
-import 'package:ecommerceapp/constans/constans.dart';
-import 'package:ecommerceapp/constans/size_config.dart';
+import '../constans/constans.dart';
+import '../constans/size_config.dart';
 import 'package:flutter/material.dart';
 
 TextStyle kBigTitleTextStyle = TextStyle(

@@ -1,5 +1,6 @@
-import 'package:ecommerceapp/presentationLayer/screens/on_boarding_screen/components/dots_indicator.dart';
-import 'package:ecommerceapp/presentationLayer/screens/on_boarding_screen/components/on_boarding_content.dart';
+import 'dots_indicator.dart';
+import 'on_boarding_content.dart';
+import '../../../widgets/defualt_button.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingBody extends StatelessWidget {
@@ -13,7 +14,10 @@ class OnBoardingBody extends StatelessWidget {
           children: const [
             Spacer(),
             OnBoardingContent(),
+            SizedBox(height: 10),
             DotsIndicator(),
+            Spacer(),
+            DefualtButton(),
           ],
         ),
       ),

@@ -3,4 +3,6 @@ part of 'shopcubit_cubit.dart';
 @immutable
 abstract class ShopState {}
 
-class ShopcubitInitial extends ShopState {}
+class AppcubitInitial extends ShopState {}
+
+class AppPageViewState extends ShopState {}

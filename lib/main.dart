@@ -1,5 +1,5 @@
-import 'package:ecommerceapp/presentationLayer/screens/on_boarding_screen/on_boarding_screen.dart';
-import 'package:ecommerceapp/themes/themes.dart';
+import 'presentationLayer/screens/on_boarding_screen/on_boarding_screen.dart';
+import 'themes/themes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
