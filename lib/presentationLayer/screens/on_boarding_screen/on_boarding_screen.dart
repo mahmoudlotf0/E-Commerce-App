@@ -1,5 +1,5 @@
 import 'package:ecommerceapp/constans/size_config.dart';
-import 'package:ecommerceapp/presentationLayer/screens/on_boarding_screen/components/body_on_boarding_screen.dart';
+import 'package:ecommerceapp/presentationLayer/screens/on_boarding_screen/components/on_boarding_body.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -8,9 +8,8 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-
     return const Scaffold(
-      body: BodyOnBoardingScreen(),
+      body: OnBoardingBody(),
     );
   }
 }
