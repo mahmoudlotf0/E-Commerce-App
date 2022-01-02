@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/presentationLayer/screens/login_screen/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../constans/constans.dart';
@@ -28,7 +29,9 @@ class DefualtButton extends StatelessWidget {
                   color: kPrimaryLightColor,
                 ),
               )),
-          onPressed: () {},
+          onPressed: () {
+            navigatorAndFinish(context, const LoginScreen());
+          },
         ),
       ),
     );
