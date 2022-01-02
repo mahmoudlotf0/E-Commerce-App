@@ -9,7 +9,7 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
 
-    return Scaffold(
+    return const Scaffold(
       body: BodyOnBoardingScreen(),
     );
   }

@@ -14,7 +14,7 @@ class ShopApp extends StatelessWidget {
     return MaterialApp(
       theme: Themes.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen(),
+      home: const OnBoardingScreen(),
     );
   }
 }
