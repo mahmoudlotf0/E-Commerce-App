@@ -9,14 +9,3 @@ const kPrimaryGradientColor = LinearGradient(
 const kSecondaryColor = Color(0xff979797);
 const kTextColor = Color(0xFF757575);
 const kAnimationDuration = Duration(microseconds: 500);
-void navigatorTo(BuildContext context, Widget widget) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-    return widget;
-  }));
-}
-
-void navigatorAndFinish(BuildContext context, Widget widget) {
-  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-    return widget;
-  }));
-}

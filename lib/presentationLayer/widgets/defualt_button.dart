@@ -1,9 +1,9 @@
-import 'package:ecommerceapp/presentationLayer/screens/login_screen/login_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../constans/constans.dart';
 import '../../constans/size_config.dart';
-import 'package:flutter/material.dart';
+import '../screens/login_screen/login_screen.dart';
 
 class DefualtButton extends StatelessWidget {
   final String title;
@@ -35,7 +35,7 @@ class DefualtButton extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            navigatorAndFinish(context, const LoginScreen());
+            Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
           },
         ),
       ),
