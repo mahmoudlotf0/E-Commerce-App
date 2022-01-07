@@ -11,7 +11,7 @@ TextStyle kHeadLine = GoogleFonts.muli(
   ),
 );
 
-TextStyle kHeadLineOne = GoogleFonts.muli(
+TextStyle kHeadLineOneWithPrimaryColor = GoogleFonts.muli(
   textStyle: TextStyle(
     fontSize: getProportionateScreenWidth(36),
     fontWeight: FontWeight.bold,
@@ -25,6 +25,14 @@ TextStyle kHeadLineTwo = GoogleFonts.muli(
   ),
 );
 TextStyle kHeadLineThree = GoogleFonts.muli(
-  textStyle:
-      TextStyle(fontSize: getProportionateScreenWidth(14), color: kTextColor),
+  textStyle: TextStyle(
+    fontSize: getProportionateScreenWidth(14),
+    color: kTextColor,
+  ),
+);
+TextStyle kHeadLineThreeWithPrimaryColor = GoogleFonts.muli(
+  textStyle: TextStyle(
+    fontSize: getProportionateScreenWidth(14),
+    color: kPrimaryColor,
+  ),
 );

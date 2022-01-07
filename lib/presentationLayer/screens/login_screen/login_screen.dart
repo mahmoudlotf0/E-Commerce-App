@@ -1,3 +1,7 @@
+import 'package:ecommerceapp/constans/constans.dart';
+import 'package:ecommerceapp/presentationLayer/screens/register_Screen/register_screen.dart';
+import 'package:ecommerceapp/presentationLayer/widgets/defaut_text_button.dart';
+import 'package:ecommerceapp/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constans/size_config.dart';
@@ -13,7 +17,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Center(
           child: Padding(
             padding: EdgeInsets.symmetric(
@@ -32,6 +36,22 @@ class LoginScreen extends StatelessWidget {
                   onTap: () {
                     print('object');
                   },
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Don\'t have an account?',
+                      style: kHeadLineThree,
+                    ),
+                    DefaultTextButton(
+                      lable: 'Sign Up',
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushNamed(RegisterScreen.routeName);
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),

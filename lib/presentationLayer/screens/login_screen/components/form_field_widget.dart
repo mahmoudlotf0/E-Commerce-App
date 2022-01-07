@@ -18,19 +18,32 @@ class FormFieldWidget extends StatelessWidget {
       child: Column(
         children: [
           DefualtTextField(
+            validate: (String? value) {
+              if (value!.isEmpty) {
+                return 'Please enter your email address';
+              }
+            },
             controller: emailController,
             hintText: 'Enter your email',
             lable: 'Email',
-            icon: Icons.email_outlined,
+            prefixIcon: Icons.email_outlined,
             textInputType: TextInputType.emailAddress,
           ),
           customSizeBox(height: 30),
           DefualtTextField(
+            validate: (String? value) {
+              if (value!.isEmpty || value.length < 8) {
+                return 'Your password is too short';
+              }
+            },
             controller: passwordController,
+            suffixIcon: Icons.visibility_outlined,
+            suffixPressed: () {},
             hintText: 'Enter your password',
+            isPassword: true,
             lable: 'Password',
-            icon: Icons.lock_outline,
-            textInputType: TextInputType.emailAddress,
+            prefixIcon: Icons.lock_outline,
+            textInputType: TextInputType.visiblePassword,
           ),
         ],
       ),

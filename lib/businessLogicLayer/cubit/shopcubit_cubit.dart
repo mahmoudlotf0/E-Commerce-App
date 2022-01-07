@@ -10,7 +10,8 @@ class ShopCubit extends Cubit<ShopState> {
   static ShopCubit getObjectFromShopCubit(BuildContext context) {
     return BlocProvider.of<ShopCubit>(context);
   }
-  // * On Boarding Data
+
+  // * On Boarding Screen
   int currentPageOfOnBoarding = 0;
   List<Map<String, String>> onBoardingData = [
     {

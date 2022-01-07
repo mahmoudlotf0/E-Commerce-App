@@ -1,10 +1,20 @@
+import 'package:bloc/bloc.dart';
+import 'package:ecommerceapp/businessLogicLayer/bloc_observer.dart';
+
 import 'app_route.dart';
 
 import 'themes/themes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(ShopApp(appRoute: AppRoute()));
+  BlocOverrides.runZoned(
+    () {
+      runApp(
+        ShopApp(appRoute: AppRoute()),
+      );
+    },
+    blocObserver: MyBlocObserver(),
+  );
 }
 
 class ShopApp extends StatelessWidget {

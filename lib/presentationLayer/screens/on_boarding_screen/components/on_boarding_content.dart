@@ -26,7 +26,7 @@ class OnBoardingContent extends StatelessWidget {
               children: [
                 Text(
                   'Medical House Store',
-                  style: kHeadLineOne,
+                  style: kHeadLineOneWithPrimaryColor,
                 ),
                 customSizeBox(height: 10),
                 Text(
