@@ -1,10 +1,10 @@
-import 'package:ecommerceapp/presentationLayer/screens/login_screen/login_screen.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
+import 'package:flutter/material.dart';
 
+import '../../../widgets/custom_size_box.dart';
+import '../../../widgets/defualt_button.dart';
+import '../../login_screen/login_screen.dart';
 import 'dots_indicator.dart';
 import 'on_boarding_content.dart';
-import '../../../widgets/defualt_button.dart';
-import 'package:flutter/material.dart';
 
 class OnBoardingBody extends StatelessWidget {
   const OnBoardingBody({Key? key}) : super(key: key);

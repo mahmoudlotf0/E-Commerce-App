@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../constans/constans.dart';
 import '../../constans/size_config.dart';
-import '../screens/login_screen/login_screen.dart';
 
 class DefualtButton extends StatelessWidget {
   final String title;

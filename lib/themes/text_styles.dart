@@ -7,7 +7,7 @@ import '../constans/size_config.dart';
 TextStyle kHeadLine = GoogleFonts.muli(
   textStyle: TextStyle(
     fontSize: getProportionateScreenHeight(40),
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.bold,
   ),
 );
 

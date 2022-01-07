@@ -1,6 +1,7 @@
-import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/default_text_field.dart';
 import 'package:flutter/material.dart';
+
+import '../../../widgets/custom_size_box.dart';
+import '../../../widgets/default_text_field.dart';
 
 class FormFieldWidget extends StatelessWidget {
   const FormFieldWidget({Key? key}) : super(key: key);
@@ -27,7 +28,7 @@ class FormFieldWidget extends StatelessWidget {
           DefualtTextField(
             controller: passwordController,
             hintText: 'Enter your password',
-            lable: 'password',
+            lable: 'Password',
             icon: Icons.lock_outline,
             textInputType: TextInputType.emailAddress,
           ),

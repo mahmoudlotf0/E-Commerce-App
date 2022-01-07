@@ -1,4 +1,4 @@
-import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
+import '../../../widgets/custom_size_box.dart';
 
 import '../../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
 import '../../../../constans/size_config.dart';
