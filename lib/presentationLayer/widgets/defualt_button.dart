@@ -6,7 +6,10 @@ import '../../constans/size_config.dart';
 import 'package:flutter/material.dart';
 
 class DefualtButton extends StatelessWidget {
-  const DefualtButton({Key? key}) : super(key: key);
+  final String title;
+  final double height;
+  const DefualtButton({required this.title, required this.height, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class DefualtButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
       child: SizedBox(
         width: double.infinity,
-        height: getProportionateScreenHeight(60),
+        height: getProportionateScreenHeight(height),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
@@ -22,13 +25,15 @@ class DefualtButton extends StatelessWidget {
             ),
             primary: kPrimaryColor,
           ),
-          child: Text('Continue',
-              style: GoogleFonts.muli(
-                textStyle: TextStyle(
-                  fontSize: getProportionateScreenWidth(20),
-                  color: kPrimaryLightColor,
-                ),
-              )),
+          child: Text(
+            title,
+            style: GoogleFonts.muli(
+              textStyle: TextStyle(
+                fontSize: getProportionateScreenWidth(20),
+                color: kPrimaryLightColor,
+              ),
+            ),
+          ),
           onPressed: () {
             navigatorAndFinish(context, const LoginScreen());
           },

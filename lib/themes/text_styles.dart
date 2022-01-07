@@ -1,17 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constans/constans.dart';
 import '../constans/size_config.dart';
-import 'package:flutter/material.dart';
 
-TextStyle kBigTitleTextStyle = GoogleFonts.muli(
+TextStyle kHeadLineOne = GoogleFonts.muli(
   textStyle: TextStyle(
     fontSize: getProportionateScreenWidth(36),
     fontWeight: FontWeight.bold,
     color: kPrimaryColor,
   ),
 );
-TextStyle ktitleTextStyle = GoogleFonts.muli(
+TextStyle kHeadLineTwo = GoogleFonts.muli(
   textStyle: TextStyle(
     fontSize: getProportionateScreenWidth(20),
     color: kTextColor,

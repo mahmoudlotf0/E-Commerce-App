@@ -24,12 +24,12 @@ class OnBoardingContent extends StatelessWidget {
               children: [
                 Text(
                   'Medical House Store',
-                  style: kBigTitleTextStyle,
+                  style: kHeadLineOne,
                 ),
                 const SizedBox(height: 10),
                 Text(
                   cubit.onBoardingData[index]['text']!,
-                  style: ktitleTextStyle,
+                  style: kHeadLineTwo,
                   textAlign: TextAlign.center,
                 ),
                 const Spacer(),

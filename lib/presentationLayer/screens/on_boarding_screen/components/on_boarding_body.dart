@@ -17,7 +17,7 @@ class OnBoardingBody extends StatelessWidget {
             SizedBox(height: 10),
             DotsIndicator(),
             Spacer(),
-            DefualtButton(),
+            DefualtButton(title: 'Continue', height: 60),
           ],
         ),
       ),
