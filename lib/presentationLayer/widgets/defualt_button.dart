@@ -8,8 +8,13 @@ import '../screens/login_screen/login_screen.dart';
 class DefualtButton extends StatelessWidget {
   final String title;
   final double height;
-  const DefualtButton({required this.title, required this.height, Key? key})
-      : super(key: key);
+  final Function()? onTap;
+  const DefualtButton({
+    required this.onTap,
+    required this.title,
+    required this.height,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +39,7 @@ class DefualtButton extends StatelessWidget {
               ),
             ),
           ),
-          onPressed: () {
-            Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
-          },
+          onPressed: onTap,
         ),
       ),
     );

@@ -1,3 +1,5 @@
+import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
+
 import '../../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
 import '../../../../constans/size_config.dart';
 import '../../../../themes/text_styles.dart';
@@ -26,7 +28,7 @@ class OnBoardingContent extends StatelessWidget {
                   'Medical House Store',
                   style: kHeadLineOne,
                 ),
-                const SizedBox(height: 10),
+                customSizeBox(height: 10),
                 Text(
                   cubit.onBoardingData[index]['text']!,
                   style: kHeadLineTwo,

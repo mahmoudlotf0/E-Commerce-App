@@ -4,6 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 import '../constans/constans.dart';
 import '../constans/size_config.dart';
 
+TextStyle kHeadLine = GoogleFonts.muli(
+  textStyle: TextStyle(
+    fontSize: getProportionateScreenHeight(40),
+    fontWeight: FontWeight.w600,
+  ),
+);
+
 TextStyle kHeadLineOne = GoogleFonts.muli(
   textStyle: TextStyle(
     fontSize: getProportionateScreenWidth(36),
@@ -16,4 +23,8 @@ TextStyle kHeadLineTwo = GoogleFonts.muli(
     fontSize: getProportionateScreenWidth(20),
     color: kTextColor,
   ),
+);
+TextStyle kHeadLineThree = GoogleFonts.muli(
+  textStyle:
+      TextStyle(fontSize: getProportionateScreenWidth(14), color: kTextColor),
 );
