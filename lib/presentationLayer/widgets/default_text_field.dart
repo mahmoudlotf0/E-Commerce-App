@@ -36,8 +36,12 @@ class DefualtTextField extends StatelessWidget {
       controller: controller,
       keyboardType: textInputType,
       decoration: InputDecoration(
+        floatingLabelBehavior: FloatingLabelBehavior.always,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.0),
+          borderSide: const BorderSide(
+            color: Colors.grey,
+          ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.0),

@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+
 import 'package:ecommerceapp/businessLogicLayer/bloc_observer.dart';
 
 import 'app_route.dart';
-
 import 'themes/themes.dart';
-import 'package:flutter/material.dart';
 
 void main() {
   BlocOverrides.runZoned(

@@ -1,4 +1,3 @@
-import 'package:ecommerceapp/constans/constans.dart';
 import 'package:ecommerceapp/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
