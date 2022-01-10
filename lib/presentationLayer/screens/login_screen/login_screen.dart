@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/presentationLayer/screens/products_screen/products_screen.dart';
 import 'package:ecommerceapp/presentationLayer/screens/register_Screen/register_screen.dart';
 import 'package:ecommerceapp/presentationLayer/widgets/defaut_text_button.dart';
 import 'package:ecommerceapp/themes/text_styles.dart';
@@ -33,7 +34,7 @@ class LoginScreen extends StatelessWidget {
                   title: 'Continue',
                   height: 60,
                   onTap: () {
-                    print('object');
+                    Navigator.of(context).pushNamed(ProductsScreen.routeName);
                   },
                 ),
                 Row(

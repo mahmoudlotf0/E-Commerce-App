@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:ecommerceapp/businessLogicLayer/cubit/shopcubit_cubit.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerceapp/businessLogicLayer/bloc_observer.dart';
@@ -10,7 +11,7 @@ void main() {
   BlocOverrides.runZoned(
     () {
       runApp(
-        ShopApp(appRoute: AppRoute()),
+        ShopApp(appRoute: AppRoute(ShopCubit())),
       );
     },
     blocObserver: MyBlocObserver(),

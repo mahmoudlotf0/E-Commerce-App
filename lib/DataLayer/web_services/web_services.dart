@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 
 class WebServices {
-  static Dio? dio;
-  static initDio() {
+  late Dio dio;
+  WebServices() {
     dio = Dio(
       BaseOptions(
         baseUrl: 'https://fakestoreapi.com/',
@@ -13,7 +13,7 @@ class WebServices {
 
   Future<List<dynamic>> getAllProducts() async {
     try {
-      Response response = await dio!.get('products');
+      Response response = await dio.get('products');
       return response.data;
     } catch (e) {
       print('Error when get data: ${e.toString()}');

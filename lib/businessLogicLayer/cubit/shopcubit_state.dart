@@ -7,6 +7,8 @@ class AppcubitInitial extends ShopState {}
 
 class AppPageViewState extends ShopState {}
 
+class AppGetDataFromRepository extends ShopState {}
+
 class AppLoginLoadingState extends ShopState {}
 
 class AppLoginSuccessState extends ShopState {}
