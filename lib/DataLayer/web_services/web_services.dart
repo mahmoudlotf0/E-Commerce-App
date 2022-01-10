@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:ecommerceapp/constans/constans.dart';
+import '../../constans/constans.dart';
 
 class WebServices {
   late Dio dio;

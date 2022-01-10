@@ -1,5 +1,6 @@
-import 'package:ecommerceapp/themes/text_styles.dart';
 import 'package:flutter/material.dart';
+
+import '../../themes/text_styles.dart';
 
 // ignore: must_be_immutable
 class DefaultTextButton extends StatelessWidget {

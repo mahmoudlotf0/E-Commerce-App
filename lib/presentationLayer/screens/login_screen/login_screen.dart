@@ -1,14 +1,14 @@
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/products_screen.dart';
-import 'package:ecommerceapp/presentationLayer/screens/register_Screen/register_screen.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/defaut_text_button.dart';
-import 'package:ecommerceapp/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constans/size_config.dart';
+import '../../../themes/text_styles.dart';
+import '../../widgets/custom_size_box.dart';
+import '../../widgets/defaut_text_button.dart';
+import '../../widgets/defualt_button.dart';
+import '../products_screen/products_screen.dart';
+import '../register_Screen/register_screen.dart';
 import 'components/form_field_widget.dart';
 import 'components/head_widget.dart';
-import '../../widgets/custom_size_box.dart';
-import '../../widgets/defualt_button.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String routeName = 'LoginScreen';

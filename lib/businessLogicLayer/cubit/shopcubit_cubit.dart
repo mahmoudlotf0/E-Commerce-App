@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:ecommerceapp/DataLayer/model/product.dart';
-import 'package:ecommerceapp/DataLayer/repository/repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
+
+import '../../DataLayer/model/product.dart';
+import '../../DataLayer/repository/repository.dart';
 
 part 'shopcubit_state.dart';
 

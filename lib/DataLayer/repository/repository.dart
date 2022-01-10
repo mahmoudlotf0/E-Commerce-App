@@ -1,5 +1,5 @@
-import 'package:ecommerceapp/DataLayer/model/product.dart';
-import 'package:ecommerceapp/DataLayer/web_services/web_services.dart';
+import '../model/product.dart';
+import '../web_services/web_services.dart';
 
 class Repository {
   Future<List<Product>> getAllProducts() async {

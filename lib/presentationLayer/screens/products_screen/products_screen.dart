@@ -1,6 +1,7 @@
-import 'package:ecommerceapp/businessLogicLayer/cubit/shopcubit_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
 
 class ProductsScreen extends StatelessWidget {
   static const String routeName = 'ProductsScreen';
