@@ -24,8 +24,7 @@ class OnBoardingBody extends StatelessWidget {
               title: 'Continue',
               height: 60,
               onTap: () {
-                Navigator.of(context)
-                    .pushReplacementNamed(LoginScreen.routeName);
+                Navigator.of(context).pushNamed(LoginScreen.routeName);
               },
             ),
           ],

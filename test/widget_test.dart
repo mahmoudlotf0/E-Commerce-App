@@ -6,7 +6,6 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:ecommerceapp/app_route.dart';
-import 'package:ecommerceapp/businessLogicLayer/cubit/shopcubit_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -16,7 +15,7 @@ void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(ShopApp(
-      appRoute: AppRoute(ShopCubit()),
+      appRoute: AppRoute(),
     ));
 
     // Verify that our counter starts at 0.

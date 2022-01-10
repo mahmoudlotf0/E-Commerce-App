@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:ecommerceapp/DataLayer/model/product.dart';
 import 'package:ecommerceapp/DataLayer/repository/repository.dart';
-import 'package:ecommerceapp/DataLayer/web_services/web_services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
@@ -37,12 +36,11 @@ class ShopCubit extends Cubit<ShopState> {
 
   //* get Data Form Repository
   List<Product> products = [];
-  Repository repository = Repository(WebServices());
-  Future<List<Product>> getAllProducts() async {
-    await repository.getAllProducts().then((value) {
-      emit(AppGetDataFromRepository());
-
+  Repository repository = Repository();
+  List<Product> getAllProducts() {
+    repository.getAllProducts().then((value) {
       products = value;
+      emit(AppGetDataState());
     });
     return products;
   }

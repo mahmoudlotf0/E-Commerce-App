@@ -9,3 +9,4 @@ const kPrimaryGradientColor = LinearGradient(
 const kSecondaryColor = Color(0xff979797);
 const kTextColor = Color(0xFF757575);
 const kAnimationDuration = Duration(microseconds: 500);
+const String baseUrl = 'https://fakestoreapi.com/';

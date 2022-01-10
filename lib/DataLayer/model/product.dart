@@ -1,7 +1,7 @@
 class Product {
   late int id;
   late String title;
-  late final price;
+  late dynamic price;
   late String description;
   late String category;
   late String image;
