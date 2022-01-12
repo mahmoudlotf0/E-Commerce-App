@@ -8,19 +8,13 @@ class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(20),
-        vertical: getProportionateScreenHeight(15),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
-          SearchProduct(),
-          BuildCartContainer(),
-          BuildBellContainer(),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: const [
+        SearchProduct(),
+        BuildCartContainer(),
+        BuildBellContainer(),
+      ],
     );
   }
 }

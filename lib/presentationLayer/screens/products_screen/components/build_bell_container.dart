@@ -35,7 +35,8 @@ class BuildBellContainer extends StatelessWidget {
             child: const Text(
               '3',
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white),
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ),
         ),
