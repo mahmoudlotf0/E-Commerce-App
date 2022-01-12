@@ -14,9 +14,7 @@ class AppRoute {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(
-          builder: (_) => const OnBoardingScreen(),
-        );
+        return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
       case LoginScreen.routeName:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case RegisterScreen.routeName:

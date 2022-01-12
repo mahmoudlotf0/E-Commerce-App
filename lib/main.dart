@@ -23,8 +23,6 @@ class ShopApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('welcome');
-
     return BlocProvider(
       create: (_) => ShopCubit(),
       child: MaterialApp(
