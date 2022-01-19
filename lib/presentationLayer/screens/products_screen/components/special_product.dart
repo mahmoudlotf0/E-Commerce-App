@@ -47,7 +47,7 @@ class SpecialProduct extends StatelessWidget {
                             width: getProportionateScreenWidth(100),
                           ),
                           customSizeBox(
-                            width: SizeConfig.screenWidth * 0.20,
+                            width: SizeConfig.screenWidth * 0.30,
                             height: getProportionateScreenHeight(20),
                             child: Text(
                               cubit.allProducts[index].title,
