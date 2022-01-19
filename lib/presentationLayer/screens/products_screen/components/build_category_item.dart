@@ -6,9 +6,11 @@ import 'package:google_fonts/google_fonts.dart';
 class BuildCategoryItem extends StatelessWidget {
   final String imagePath;
   final String lable;
-  const BuildCategoryItem(
-      {required this.imagePath, required this.lable, Key? key})
-      : super(key: key);
+  const BuildCategoryItem({
+    required this.imagePath,
+    required this.lable,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,10 @@ class BuildCategoryItem extends StatelessWidget {
                 horizontal: getProportionateScreenWidth(15),
                 vertical: getProportionateScreenHeight(15),
               ),
-              child: Image.asset(imagePath),
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.fill,
+              ),
             ),
           ),
           Text(
