@@ -11,7 +11,7 @@ class SearchProduct extends StatelessWidget {
 
     return Container(
       width: SizeConfig.screenWidth * 0.6,
-      height: getProportionateScreenHeight(50),
+      height: getProportionateScreenHeight(45),
       decoration: BoxDecoration(
         color: Colors.grey[300],
         borderRadius: BorderRadius.circular(15),

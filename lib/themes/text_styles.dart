@@ -37,3 +37,10 @@ TextStyle kHeadLineThreeWithPrimaryColor = GoogleFonts.muli(
     color: kPrimaryColor,
   ),
 );
+TextStyle kHeadLineFour = GoogleFonts.muli(
+  textStyle: TextStyle(
+    fontSize: getProportionateScreenWidth(14),
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+  ),
+);
