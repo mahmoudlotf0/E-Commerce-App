@@ -23,7 +23,7 @@ class BuildContainerCategory extends StatelessWidget {
               horizontal: getProportionateScreenWidth(20),
               vertical: getProportionateScreenHeight(20)),
           child: Text(
-            'Category',
+            'Categories',
             style: GoogleFonts.muli(
               textStyle: TextStyle(
                 color: Colors.white,
