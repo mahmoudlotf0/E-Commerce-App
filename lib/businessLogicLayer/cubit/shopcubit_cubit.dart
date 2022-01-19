@@ -33,15 +33,14 @@ class ShopCubit extends Cubit<ShopState> {
     emit(AppPageViewState());
   }
 
-  //* get Data Form Repository
-  List<Product> products = [];
-
+  //* get all Product from API
+  List<Product> allProducts = [];
   List<Product> getAllProducts() {
     Repository repository = Repository();
     repository.getAllProducts().then((value) {
-      products = value;
+      allProducts = value;
       emit(AppGetDataState());
     });
-    return products;
+    return allProducts;
   }
 }

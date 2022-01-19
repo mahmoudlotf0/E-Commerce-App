@@ -11,9 +11,9 @@ class WebServices {
       ),
     );
   }
-  Future<List<dynamic>> getAllProducts() async {
+  Future<List<dynamic>> getAllProducts(String path) async {
     try {
-      Response response = await dio.get('products');
+      Response response = await dio.get(path);
       return response.data;
     } catch (e) {
       print('Error when get data from API ${e.toString()}');
