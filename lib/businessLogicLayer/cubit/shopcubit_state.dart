@@ -9,6 +9,8 @@ class AppPageViewState extends ShopState {}
 
 class AppGetDataState extends ShopState {}
 
+class AppBottomNavigationBarChangeState extends ShopState {}
+
 class AppDataLoadingState extends ShopState {}
 
 class AppLoginLoadingState extends ShopState {}

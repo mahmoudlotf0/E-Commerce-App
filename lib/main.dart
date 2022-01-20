@@ -24,7 +24,7 @@ class ShopApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ShopCubit(),
+      create: (ctx) => ShopCubit()..getAllProducts(),
       child: MaterialApp(
         theme: Themes.lightTheme,
         debugShowCheckedModeBanner: false,

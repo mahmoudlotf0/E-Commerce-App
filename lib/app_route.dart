@@ -7,10 +7,10 @@ import 'presentationLayer/screens/products_screen/products_screen.dart';
 import 'presentationLayer/screens/register_Screen/register_screen.dart';
 
 class AppRoute {
-  ShopCubit cubit = ShopCubit();
-  AppRoute() {
-    cubit.getAllProducts();
-  }
+  // ShopCubit cubit = ShopCubit();
+  // AppRoute() {
+  //   cubit.getAllProducts();
+  // }
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
@@ -20,7 +20,7 @@ class AppRoute {
       case RegisterScreen.routeName:
         return MaterialPageRoute(builder: (_) => const RegisterScreen());
       case ProductsScreen.routeName:
-        return MaterialPageRoute(builder: (_) => ProductsScreen(cubit: cubit));
+        return MaterialPageRoute(builder: (_) => ProductsScreen());
     }
   }
 }

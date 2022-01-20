@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/presentationLayer/screens/products_screen/products_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,6 +11,13 @@ class ShopCubit extends Cubit<ShopState> {
   ShopCubit() : super(AppcubitInitial());
   static ShopCubit getObjectFromShopCubit(BuildContext context) {
     return BlocProvider.of<ShopCubit>(context);
+  }
+
+  // * bottom navigation bar
+  int currentIndex = 0;
+  void onTapBottomNavigationBar(int index) {
+    currentIndex = index;
+    emit(AppBottomNavigationBarChangeState());
   }
 
   // * On Boarding Screen
