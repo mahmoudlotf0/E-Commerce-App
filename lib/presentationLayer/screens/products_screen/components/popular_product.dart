@@ -31,7 +31,6 @@ class PopularProduct extends StatelessWidget {
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              print(index);
               Random random = Random();
               index = random.nextInt(19);
               return index <= 19
