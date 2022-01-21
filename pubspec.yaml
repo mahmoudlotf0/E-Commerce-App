@@ -19,7 +19,7 @@ dependencies:
   sqflite: ^2.0.1
   dio: ^4.0.4
   font_awesome_flutter: ^9.2.0
-
+  flutter_offline: "^2.0.0"
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
