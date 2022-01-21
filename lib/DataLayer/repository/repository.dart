@@ -8,7 +8,6 @@ class Repository {
     await webServices.getAllProducts('products').then((value) {
       allProducts =
           value.map((itemProducts) => Product.fromJson(itemProducts)).toList();
-      print('Data is assign in model');
     });
 
     return allProducts;
