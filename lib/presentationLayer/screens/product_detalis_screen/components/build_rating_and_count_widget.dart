@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:ecommerceapp/DataLayer/model/product.dart';
 import 'package:ecommerceapp/constans/constans.dart';
 import 'package:ecommerceapp/constans/size_config.dart';
@@ -21,7 +23,7 @@ class BuildRatingAndCountWidget extends StatelessWidget {
         children: [
           SmoothStarRating(
             starCount: 5,
-            rating: product.rating['rate'],
+            rating: product.rating['rate'] + 0.0,
             allowHalfRating: true,
             size: 20.0,
             filledIconData: Icons.star,
