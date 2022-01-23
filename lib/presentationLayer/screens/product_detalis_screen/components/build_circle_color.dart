@@ -25,7 +25,7 @@ class _BuildCircleColorState extends State<BuildCircleColor> {
       width: SizeConfig.screenWidth,
       height: getProportionateScreenHeight(60),
       decoration: BoxDecoration(
-        color: Colors.grey[300],
+        color: Colors.grey[200],
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
