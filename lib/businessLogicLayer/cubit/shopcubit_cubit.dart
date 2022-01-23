@@ -37,7 +37,7 @@ class ShopCubit extends Cubit<ShopState> {
   ];
   void onChangePageView(int value) {
     currentPageOfOnBoarding = value;
-    emit(AppPageViewState());
+    emit(AppOnBoardingState());
   }
 
   //* get all Product from API
@@ -52,5 +52,17 @@ class ShopCubit extends Cubit<ShopState> {
       print(error.toString());
     });
     return allProducts;
+  }
+
+  //* Number Product
+  int numberProduct = 0;
+  void increaseNumberProduct() {
+    numberProduct++;
+    emit(AppNumberProductIncreaceState());
+  }
+
+  void decreaseNumberProduct() {
+    numberProduct--;
+    emit(AppNumberProductDecreaceState());
   }
 }
