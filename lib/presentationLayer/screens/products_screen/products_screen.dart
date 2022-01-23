@@ -21,7 +21,7 @@ class ProductsScreen extends StatelessWidget {
   static const String routeName = 'ProductsScreen';
 
   const ProductsScreen({Key? key}) : super(key: key);
-
+  // TODO: Add RefreshIndicatior Widget to Get All Prodcut
   @override
   Widget build(BuildContext context) {
     return OfflineBuilder(
@@ -50,6 +50,7 @@ class ProductsScreen extends StatelessWidget {
                   bottomNavigationBar: BottomNavigationWidget(cubit: cubit),
                   body: cubit.currentIndex == 0
                       ? SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                               horizontal: getProportionateScreenWidth(20),
