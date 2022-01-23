@@ -49,20 +49,21 @@ class _BuildCircleColorState extends State<BuildCircleColor> {
                 horizontal: getProportionateScreenWidth(8),
               ),
               decoration: BoxDecoration(
-                  color: colors[index],
-                  shape: BoxShape.circle,
-                  border: selectedColor == index
-                      ? Border.all(
-                          color: index == 3 ? Colors.black : Colors.white,
-                          width: 3,
-                        )
-                      : Border.all(
-                          color: Colors.white.withOpacity(0),
-                        )),
+                color: colors[index],
+                shape: BoxShape.circle,
+                border: selectedColor == index
+                    ? Border.all(
+                        color: index == 3 ? Colors.black : Colors.white,
+                        width: 3,
+                      )
+                    : Border.all(
+                        color: Colors.white.withOpacity(0),
+                      ),
+              ),
             ),
           );
         },
-        itemCount: 7,
+        itemCount: colors.length,
       ),
     );
   }
