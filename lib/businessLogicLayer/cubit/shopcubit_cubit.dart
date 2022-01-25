@@ -65,4 +65,9 @@ class ShopCubit extends Cubit<ShopState> {
     numberProduct--;
     emit(AppNumberProductDecreaceState());
   }
+
+  void resetNumberProduct() {
+    numberProduct = 0;
+    emit(AppNumberProductResetState());
+  }
 }

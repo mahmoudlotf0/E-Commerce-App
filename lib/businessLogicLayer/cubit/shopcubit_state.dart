@@ -11,6 +11,8 @@ class AppNumberProductIncreaceState extends ShopState {}
 
 class AppNumberProductDecreaceState extends ShopState {}
 
+class AppNumberProductResetState extends ShopState {}
+
 class AppGetDataState extends ShopState {}
 
 class AppBottomNavigationBarChangeState extends ShopState {}
