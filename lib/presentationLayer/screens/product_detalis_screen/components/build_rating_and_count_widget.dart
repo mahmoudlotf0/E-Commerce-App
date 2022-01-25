@@ -1,12 +1,11 @@
-import 'dart:ffi';
+import 'package:flutter/material.dart';
+import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 
 import 'package:ecommerceapp/DataLayer/model/product.dart';
 import 'package:ecommerceapp/constans/constans.dart';
 import 'package:ecommerceapp/constans/size_config.dart';
 import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
 import 'package:ecommerceapp/themes/text_styles.dart';
-import 'package:flutter/material.dart';
-import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 
 class BuildRatingAndCountWidget extends StatelessWidget {
   final Product product;
@@ -19,34 +18,53 @@ class BuildRatingAndCountWidget extends StatelessWidget {
       width: SizeConfig.screenWidth,
       height: getProportionateScreenHeight(30),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SmoothStarRating(
-            starCount: 5,
-            rating: product.rating['rate'] + 0.0,
-            allowHalfRating: true,
-            size: 20.0,
-            filledIconData: Icons.star,
-            halfFilledIconData: Icons.star_border_outlined,
-            color: kPrimaryColor,
-            borderColor: kPrimaryColor,
-            spacing: 0.0,
-          ),
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: product.rating['count'].toString(),
-                  style: kHeadLineThree.copyWith(
-                    color: kPrimaryColor,
-                  ),
-                ),
-                TextSpan(
-                  text: ' Count',
-                  style: kHeadLineThree,
-                ),
-              ],
+          buildRating(),
+          buildPrice(),
+          buildCountNumber(),
+        ],
+      ),
+    );
+  }
+
+  Widget buildPrice() {
+    return Text(
+      '\$${product.price.toString()}',
+      style: kHeadLineTwo.copyWith(
+        fontWeight: FontWeight.bold,
+        color: kPrimaryColor,
+      ),
+    );
+  }
+
+  Widget buildRating() {
+    return SmoothStarRating(
+      starCount: 5,
+      rating: product.rating['rate'] + 0.0,
+      allowHalfRating: true,
+      size: 20.0,
+      filledIconData: Icons.star,
+      halfFilledIconData: Icons.star_border_outlined,
+      color: kPrimaryColor,
+      borderColor: kPrimaryColor,
+      spacing: 0.0,
+    );
+  }
+
+  Widget buildCountNumber() {
+    return RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(
+            text: product.rating['count'].toString(),
+            style: kHeadLineThree.copyWith(
+              color: kPrimaryColor,
             ),
+          ),
+          TextSpan(
+            text: ' Count',
+            style: kHeadLineThree,
           ),
         ],
       ),
