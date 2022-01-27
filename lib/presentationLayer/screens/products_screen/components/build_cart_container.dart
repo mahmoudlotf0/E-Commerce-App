@@ -1,5 +1,5 @@
-import 'package:ecommerceapp/constans/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class BuildCartContainer extends StatelessWidget {
@@ -7,19 +7,19 @@ class BuildCartContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         // TODO: Go To Cart Screen
       },
       child: Container(
-        width: getProportionateScreenWidth(46),
-        height: getProportionateScreenWidth(46),
+        width: 46.w,
+        height: 40.h,
         decoration: BoxDecoration(
           color: Colors.grey[300],
           shape: BoxShape.circle,
         ),
         child: Padding(
-          padding: EdgeInsets.all(getProportionateScreenWidth(12)),
+          padding: EdgeInsets.all(12.r),
           child: SvgPicture.asset('assets/icons/Cart Icon.svg'),
         ),
       ),

@@ -1,9 +1,9 @@
-import 'package:ecommerceapp/DataLayer/model/product.dart';
-import 'package:ecommerceapp/presentationLayer/screens/product_detalis_screen/product_details_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'DataLayer/model/product.dart';
 import 'presentationLayer/screens/login_screen/login_screen.dart';
 import 'presentationLayer/screens/on_boarding_screen/on_boarding_screen.dart';
+import 'presentationLayer/screens/product_detalis_screen/product_details_screen.dart';
 import 'presentationLayer/screens/products_screen/products_screen.dart';
 import 'presentationLayer/screens/register_Screen/register_screen.dart';
 

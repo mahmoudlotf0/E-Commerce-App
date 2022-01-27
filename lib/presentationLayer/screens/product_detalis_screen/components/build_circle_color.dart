@@ -1,5 +1,6 @@
-import 'package:ecommerceapp/constans/size_config.dart';
+import '../../../../constans/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuildCircleColor extends StatefulWidget {
   const BuildCircleColor({Key? key}) : super(key: key);
@@ -23,14 +24,14 @@ class _BuildCircleColorState extends State<BuildCircleColor> {
   Widget build(BuildContext context) {
     return Container(
       width: SizeConfig.screenWidth,
-      height: getProportionateScreenHeight(60),
+      height: 50.h,
       decoration: BoxDecoration(
         color: Colors.grey[200],
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-          bottomLeft: Radius.circular(10),
-          bottomRight: Radius.circular(10),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20.r),
+          topRight: Radius.circular(20.r),
+          bottomLeft: Radius.circular(10.r),
+          bottomRight: Radius.circular(10.r),
         ),
       ),
       child: ListView.builder(
@@ -43,10 +44,10 @@ class _BuildCircleColorState extends State<BuildCircleColor> {
               });
             },
             child: Container(
-              width: getProportionateScreenHeight(30),
-              height: getProportionateScreenHeight(30),
+              width: 30.w,
+              height: 20.h,
               margin: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(8),
+                horizontal: 7.w,
               ),
               decoration: BoxDecoration(
                 color: colors[index],

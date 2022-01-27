@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../widgets/custom_size_box.dart';
 import '../../../widgets/default_text_field.dart';
 
 class FormFieldWidget extends StatelessWidget {
@@ -29,7 +29,7 @@ class FormFieldWidget extends StatelessWidget {
             prefixIcon: Icons.email_outlined,
             textInputType: TextInputType.emailAddress,
           ),
-          customSizeBox(height: 30),
+          SizedBox(height: 30.h),
           DefualtTextField(
             validate: (String? value) {
               if (value!.isEmpty || value.length < 8) {

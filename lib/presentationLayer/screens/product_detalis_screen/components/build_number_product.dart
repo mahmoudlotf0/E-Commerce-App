@@ -1,8 +1,10 @@
-import 'package:ecommerceapp/businessLogicLayer/cubit/shopcubit_cubit.dart';
-import 'package:ecommerceapp/constans/size_config.dart';
-import 'package:ecommerceapp/themes/text_styles.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import '../../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
+import '../../../../constans/size_config.dart';
+import '../../../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuildNumberProduct extends StatelessWidget {
   const BuildNumberProduct({Key? key}) : super(key: key);
@@ -12,14 +14,14 @@ class BuildNumberProduct extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.grey[200],
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-          bottomLeft: Radius.circular(10),
-          bottomRight: Radius.circular(10),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20.r),
+          topRight: Radius.circular(20.r),
+          bottomLeft: Radius.circular(10.r),
+          bottomRight: Radius.circular(10.r),
         ),
       ),
-      height: getProportionateScreenHeight(60),
+      height: 55.h,
       width: SizeConfig.screenWidth,
       child: BlocConsumer<ShopCubit, ShopState>(
           listener: (context, state) {},
@@ -37,7 +39,7 @@ class BuildNumberProduct extends StatelessWidget {
                   },
                   icon: Icons.remove,
                 ),
-                Text(
+                AutoSizeText(
                   cubit.numberProduct.toString(),
                   style: kHeadLineOneWithPrimaryColor,
                 ),

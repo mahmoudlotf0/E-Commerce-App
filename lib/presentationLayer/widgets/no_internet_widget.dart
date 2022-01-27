@@ -1,4 +1,4 @@
-import 'package:ecommerceapp/themes/text_styles.dart';
+import '../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class NoInternetWidget extends StatelessWidget {

@@ -1,11 +1,12 @@
-import 'package:ecommerceapp/businessLogicLayer/cubit/shopcubit_cubit.dart';
-import 'package:ecommerceapp/constans/constans.dart';
-import 'package:ecommerceapp/constans/size_config.dart';
-import 'package:ecommerceapp/presentationLayer/screens/product_detalis_screen/product_details_screen.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/cirular_indecator_widget.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
-import 'package:ecommerceapp/themes/text_styles.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import '../../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
+import '../../../../constans/constans.dart';
+import '../../../../constans/size_config.dart';
+import '../../product_detalis_screen/product_details_screen.dart';
+import '../../../widgets/cirular_indecator_widget.dart';
+import '../../../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:like_button/like_button.dart';
 
@@ -20,16 +21,17 @@ class PopularProduct extends StatelessWidget {
         : Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              AutoSizeText(
                 'Popular Product',
                 style: kHeadLineTwo.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
+                maxLines: 1,
               ),
-              customSizeBox(height: 20),
-              customSizeBox(
+              SizedBox(height: 20.h),
+              SizedBox(
                 width: SizeConfig.screenWidth,
-                height: getProportionateScreenHeight(200),
+                height: 160.h,
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
@@ -44,14 +46,16 @@ class PopularProduct extends StatelessWidget {
                       },
                       child: Padding(
                         padding: EdgeInsets.only(
-                          right: getProportionateScreenWidth(20.0),
+                          right: 20.r,
                         ),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             buildImage(index),
                             buildTitle(index),
                             buildCategoryName(index),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 buildPrice(index),
                                 buildLikeButton(),
@@ -71,20 +75,18 @@ class PopularProduct extends StatelessWidget {
 
   Widget buildImage(int index) {
     return Container(
-      width: SizeConfig.screenWidth * 0.4,
-      height: getProportionateScreenHeight(100),
+      width: 140.w,
+      height: 100.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(20.0.r),
         color: Colors.grey[200],
       ),
       child: Padding(
         padding: EdgeInsets.all(
-          getProportionateScreenHeight(15),
+          15.r,
         ),
         child: cubit.allProducts[index].image.isNotEmpty
             ? FadeInImage.assetNetwork(
-                width: double.infinity,
-                height: double.infinity,
                 fit: BoxFit.fill,
                 placeholder: 'assets/icons/loading.gif',
                 image: cubit.allProducts[index].image,
@@ -95,10 +97,10 @@ class PopularProduct extends StatelessWidget {
   }
 
   Widget buildTitle(int index) {
-    return customSizeBox(
-      width: SizeConfig.screenWidth * 0.35,
-      height: getProportionateScreenHeight(20),
-      child: Text(
+    return SizedBox(
+      width: 140.w,
+      height: 18.h,
+      child: AutoSizeText(
         cubit.allProducts[index].title,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
@@ -114,10 +116,10 @@ class PopularProduct extends StatelessWidget {
   }
 
   Widget buildCategoryName(int index) {
-    return customSizeBox(
-      width: SizeConfig.screenWidth * 0.35,
-      height: getProportionateScreenHeight(20),
-      child: Text(
+    return SizedBox(
+      width: 140.w,
+      height: 18.h,
+      child: AutoSizeText(
         cubit.allProducts[index].category.toUpperCase(),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
@@ -134,10 +136,10 @@ class PopularProduct extends StatelessWidget {
   }
 
   Widget buildPrice(int index) {
-    return customSizeBox(
-      width: SizeConfig.screenWidth * 0.35,
-      height: getProportionateScreenHeight(20),
-      child: Text(
+    return SizedBox(
+      width: 120.w,
+      height: 18.h,
+      child: AutoSizeText(
         '\$${cubit.allProducts[index].price}',
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
@@ -155,7 +157,7 @@ class PopularProduct extends StatelessWidget {
 
   Widget buildLikeButton() {
     return LikeButton(
-      size: getProportionateScreenWidth(20),
+      size: 20.w,
       // TODO: When tap go to favotite list
     );
   }

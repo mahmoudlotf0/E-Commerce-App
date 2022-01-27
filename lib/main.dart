@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app_route.dart';
 import 'businessLogicLayer/bloc_observer.dart';
@@ -23,12 +24,24 @@ class ShopApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (ctx) => ShopCubit()..getAllProducts(),
-      child: MaterialApp(
-        theme: Themes.lightTheme,
-        debugShowCheckedModeBanner: false,
-        onGenerateRoute: appRoute.generateRoute,
+    return ScreenUtilInit(
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: () => BlocProvider(
+        create: (ctx) => ShopCubit()..getAllProducts(),
+        child: MaterialApp(
+          builder: (BuildContext context, Widget? widget) {
+            ScreenUtil.setContext(context);
+            return MediaQuery(
+              //Setting font does not change with system font size
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: widget!,
+            );
+          },
+          theme: Themes.lightTheme,
+          debugShowCheckedModeBanner: false,
+          onGenerateRoute: appRoute.generateRoute,
+        ),
       ),
     );
   }

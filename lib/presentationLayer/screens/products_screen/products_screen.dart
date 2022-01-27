@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 
-import 'package:ecommerceapp/constans/size_config.dart';
-import 'package:ecommerceapp/presentationLayer/screens/favourite_screen/favourite_screen.dart';
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/build_containter_category.dart';
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/collection_categories.dart';
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/home_header.dart';
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/popular_product.dart';
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/special_product.dart';
-import 'package:ecommerceapp/presentationLayer/screens/profile_screen/profile_screen.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/bottom_navigation_widget.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/cirular_indecator_widget.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/no_internet_widget.dart';
+import '../favourite_screen/favourite_screen.dart';
+import 'components/build_containter_category.dart';
+import 'components/collection_categories.dart';
+import 'components/home_header.dart';
+import 'components/popular_product.dart';
+import 'components/special_product.dart';
+import '../profile_screen/profile_screen.dart';
+import '../../widgets/bottom_navigation_widget.dart';
+import '../../widgets/cirular_indecator_widget.dart';
+import '../../widgets/no_internet_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
 
@@ -53,21 +52,21 @@ class ProductsScreen extends StatelessWidget {
                           physics: const BouncingScrollPhysics(),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
-                              horizontal: getProportionateScreenWidth(20),
-                              vertical: getProportionateScreenHeight(15),
+                              horizontal: 20.r,
+                              vertical: 15.r,
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const HomeHeader(),
-                                customSizeBox(height: 30),
+                                SizedBox(height: 20.h),
                                 const BuildContainerCategory(),
-                                customSizeBox(height: 30),
+                                SizedBox(height: 20.h),
                                 const CollectionCategories(),
-                                customSizeBox(height: 30),
+                                SizedBox(height: 20.h),
                                 SpecialProduct(cubit: cubit),
-                                customSizeBox(height: 30),
+                                SizedBox(height: 20.h),
                                 PopularProduct(cubit: cubit),
                               ],
                             ),

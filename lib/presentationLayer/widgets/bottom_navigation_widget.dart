@@ -1,5 +1,5 @@
-import 'package:ecommerceapp/businessLogicLayer/cubit/shopcubit_cubit.dart';
-import 'package:ecommerceapp/constans/constans.dart';
+import '../../businessLogicLayer/cubit/shopcubit_cubit.dart';
+import '../../constans/constans.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

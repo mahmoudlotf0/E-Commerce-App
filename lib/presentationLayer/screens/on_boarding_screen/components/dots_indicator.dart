@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
 import '../../../../constans/constans.dart';
 import 'package:flutter/material.dart';
@@ -16,15 +18,16 @@ class DotsIndicator extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(
             cubit.onBoardingData.length,
-            (int index) => Container(
-              margin: const EdgeInsets.only(right: 4),
-              height: 6,
-              width: cubit.currentPageOfOnBoarding == index ? 20 : 6,
+            (int index) => AnimatedContainer(
+              duration: const Duration(milliseconds: 500),
+              margin: EdgeInsets.only(right: 4.r),
+              height: 6.h,
+              width: cubit.currentPageOfOnBoarding == index ? 20.w : 6.w,
               decoration: BoxDecoration(
                 color: cubit.currentPageOfOnBoarding == index
                     ? kPrimaryColor
                     : Colors.grey[350],
-                borderRadius: BorderRadius.circular(3),
+                borderRadius: BorderRadius.circular(3.r),
               ),
             ),
           ),

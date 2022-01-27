@@ -1,4 +1,4 @@
-import 'package:ecommerceapp/constans/constans.dart';
+import '../../constans/constans.dart';
 import 'package:flutter/material.dart';
 
 class DividerWidget extends StatelessWidget {

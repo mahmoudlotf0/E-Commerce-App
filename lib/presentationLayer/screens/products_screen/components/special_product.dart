@@ -1,13 +1,14 @@
 import 'dart:math';
 
-import 'package:ecommerceapp/businessLogicLayer/cubit/shopcubit_cubit.dart';
-import 'package:ecommerceapp/constans/constans.dart';
-import 'package:ecommerceapp/constans/size_config.dart';
-import 'package:ecommerceapp/presentationLayer/screens/product_detalis_screen/product_details_screen.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/cirular_indecator_widget.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
-import 'package:ecommerceapp/themes/text_styles.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import '../../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
+import '../../../../constans/constans.dart';
+import '../../../../constans/size_config.dart';
+import '../../product_detalis_screen/product_details_screen.dart';
+import '../../../widgets/cirular_indecator_widget.dart';
+import '../../../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SpecialProduct extends StatelessWidget {
@@ -21,16 +22,17 @@ class SpecialProduct extends StatelessWidget {
         : Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              AutoSizeText(
                 'Special for you',
+                maxLines: 1,
                 style: kHeadLineTwo.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              customSizeBox(height: 20),
-              customSizeBox(
+              SizedBox(height: 20.h),
+              SizedBox(
                 width: SizeConfig.screenWidth,
-                height: getProportionateScreenHeight(120),
+                height: 110.h,
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
@@ -47,39 +49,15 @@ class SpecialProduct extends StatelessWidget {
                             },
                             child: Padding(
                               padding: EdgeInsets.only(
-                                right: getProportionateScreenWidth(20.0),
+                                right: 20.r,
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   cubit.allProducts[index].image.isNotEmpty
-                                      ? FadeInImage.assetNetwork(
-                                          width:
-                                              getProportionateScreenWidth(100),
-                                          height:
-                                              getProportionateScreenHeight(100),
-                                          fit: BoxFit.fill,
-                                          placeholder:
-                                              'assets/icons/loading.gif',
-                                          image: cubit.allProducts[index].image,
-                                        )
+                                      ? buildImageProduct(index)
                                       : Image.asset('assets/icons/loading.gif'),
-                                  customSizeBox(
-                                    width: SizeConfig.screenWidth * 0.30,
-                                    height: getProportionateScreenHeight(20),
-                                    child: Text(
-                                      cubit.allProducts[index].title,
-                                      textAlign: TextAlign.center,
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 1,
-                                      style: GoogleFonts.muli(
-                                        textStyle: const TextStyle(
-                                          fontSize: 15.0,
-                                          color: kTextColor,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
+                                  buildTitle(index),
                                 ],
                               ),
                             ),
@@ -91,5 +69,34 @@ class SpecialProduct extends StatelessWidget {
               ),
             ],
           );
+  }
+
+  SizedBox buildTitle(int index) {
+    return SizedBox(
+      width: 80.w,
+      height: 15.h,
+      child: AutoSizeText(
+        cubit.allProducts[index].title,
+        textAlign: TextAlign.center,
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
+        style: GoogleFonts.muli(
+          textStyle: const TextStyle(
+            fontSize: 15.0,
+            color: kTextColor,
+          ),
+        ),
+      ),
+    );
+  }
+
+  FadeInImage buildImageProduct(int index) {
+    return FadeInImage.assetNetwork(
+      width: 100.w,
+      height: 90.h,
+      fit: BoxFit.fill,
+      placeholder: 'assets/icons/loading.gif',
+      image: cubit.allProducts[index].image,
+    );
   }
 }

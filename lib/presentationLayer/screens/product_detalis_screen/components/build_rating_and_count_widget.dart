@@ -1,11 +1,12 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 
-import 'package:ecommerceapp/DataLayer/model/product.dart';
-import 'package:ecommerceapp/constans/constans.dart';
-import 'package:ecommerceapp/constans/size_config.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
-import 'package:ecommerceapp/themes/text_styles.dart';
+import '../../../../DataLayer/model/product.dart';
+import '../../../../constans/constans.dart';
+import '../../../../constans/size_config.dart';
+import '../../../../themes/text_styles.dart';
 
 class BuildRatingAndCountWidget extends StatelessWidget {
   final Product product;
@@ -14,9 +15,9 @@ class BuildRatingAndCountWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return customSizeBox(
+    return SizedBox(
       width: SizeConfig.screenWidth,
-      height: getProportionateScreenHeight(30),
+      height: SizeConfig.screenHeight * 0.04,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -29,7 +30,7 @@ class BuildRatingAndCountWidget extends StatelessWidget {
   }
 
   Widget buildPrice() {
-    return Text(
+    return AutoSizeText(
       '\$${product.price.toString()}',
       style: kHeadLineTwo.copyWith(
         fontWeight: FontWeight.bold,
@@ -43,7 +44,7 @@ class BuildRatingAndCountWidget extends StatelessWidget {
       starCount: 5,
       rating: product.rating['rate'] + 0.0,
       allowHalfRating: true,
-      size: 20.0,
+      size: 20.0.w,
       filledIconData: Icons.star,
       halfFilledIconData: Icons.star_border_outlined,
       color: kPrimaryColor,
@@ -53,15 +54,13 @@ class BuildRatingAndCountWidget extends StatelessWidget {
   }
 
   Widget buildCountNumber() {
-    return RichText(
-      text: TextSpan(
+    return AutoSizeText.rich(
+      TextSpan(
+        text: product.rating['count'].toString(),
+        style: kHeadLineThree.copyWith(
+          color: kPrimaryColor,
+        ),
         children: [
-          TextSpan(
-            text: product.rating['count'].toString(),
-            style: kHeadLineThree.copyWith(
-              color: kPrimaryColor,
-            ),
-          ),
           TextSpan(
             text: ' Count',
             style: kHeadLineThree,

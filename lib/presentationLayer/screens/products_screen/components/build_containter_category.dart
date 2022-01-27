@@ -1,5 +1,6 @@
-import 'package:ecommerceapp/constans/size_config.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BuildContainerCategory extends StatelessWidget {
@@ -13,22 +14,23 @@ class BuildContainerCategory extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: getProportionateScreenHeight(100),
+        height: 80.h,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
           color: const Color(0xFF4A4598),
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenWidth(20),
-              vertical: getProportionateScreenHeight(20)),
-          child: Text(
+            horizontal: 20.r,
+            vertical: 20.r,
+          ),
+          child: AutoSizeText(
             'Categories',
             style: GoogleFonts.muli(
               textStyle: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: getProportionateScreenWidth(40.0),
+                fontSize: 35.w,
               ),
             ),
             textAlign: TextAlign.left,

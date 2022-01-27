@@ -1,5 +1,6 @@
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/build_category_item.dart';
 import 'package:flutter/material.dart';
+
+import 'build_category_item.dart';
 
 class CollectionCategories extends StatelessWidget {
   const CollectionCategories({Key? key}) : super(key: key);

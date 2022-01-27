@@ -1,6 +1,6 @@
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/build_bell_container.dart';
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/build_cart_container.dart';
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/search_product.dart';
+import 'build_bell_container.dart';
+import 'build_cart_container.dart';
+import 'search_product.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeader extends StatelessWidget {

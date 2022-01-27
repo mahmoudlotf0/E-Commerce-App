@@ -1,6 +1,7 @@
-import 'package:ecommerceapp/constans/size_config.dart';
-import 'package:ecommerceapp/themes/text_styles.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import '../../../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BuildCategoryItem extends StatelessWidget {
@@ -21,33 +22,42 @@ class BuildCategoryItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(bottom: 5),
-            height: getProportionateScreenHeight(80),
-            width: getProportionateScreenWidth(80),
+            margin: EdgeInsets.only(bottom: 5.r),
+            height: 60.h,
+            width: 70.w,
             decoration: BoxDecoration(
               color: Colors.pink[100],
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(30.r),
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(15),
-                vertical: getProportionateScreenHeight(15),
+                horizontal: 15.r,
+                vertical: 15.r,
               ),
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.fill,
-              ),
+              child: buildIcone(),
             ),
           ),
-          Text(
-            lable,
-            style: GoogleFonts.muli(
-              textStyle: kHeadLineThree,
-            ),
-            textAlign: TextAlign.center,
-          ),
+          buildTitleOfIcon(),
         ],
       ),
+    );
+  }
+
+  Widget buildTitleOfIcon() {
+    return AutoSizeText(
+      lable,
+      style: GoogleFonts.muli(
+        textStyle: kHeadLineThree,
+      ),
+      textAlign: TextAlign.center,
+      maxLines: 2,
+    );
+  }
+
+  Image buildIcone() {
+    return Image.asset(
+      imagePath,
+      fit: BoxFit.fill,
     );
   }
 }

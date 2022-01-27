@@ -1,8 +1,9 @@
-import 'package:ecommerceapp/constans/constans.dart';
-import 'package:ecommerceapp/constans/size_config.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
-import 'package:ecommerceapp/themes/text_styles.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import '../../../../constans/constans.dart';
+import '../../../../constans/size_config.dart';
+import '../../../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuildSizesProducrWidget extends StatefulWidget {
   const BuildSizesProducrWidget({Key? key}) : super(key: key);
@@ -20,12 +21,11 @@ class _BuildSizesProducrWidgetState extends State<BuildSizesProducrWidget> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(70),
-        vertical: getProportionateScreenHeight(5),
+        horizontal: 40.h,
       ),
-      child: customSizeBox(
+      child: SizedBox(
         width: SizeConfig.screenWidth,
-        height: getProportionateScreenWidth(30),
+        height: 30.h,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
@@ -38,9 +38,9 @@ class _BuildSizesProducrWidgetState extends State<BuildSizesProducrWidget> {
               },
               child: Padding(
                 padding: EdgeInsets.only(
-                  right: getProportionateScreenWidth(40),
+                  right: 50.w,
                 ),
-                child: Text(
+                child: AutoSizeText(
                   sizesText[index],
                   style: kHeadLineTwo.copyWith(
                     fontWeight: FontWeight.bold,

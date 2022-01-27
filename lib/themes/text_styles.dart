@@ -13,7 +13,7 @@ TextStyle kHeadLine = GoogleFonts.muli(
 
 TextStyle kHeadLineOneWithPrimaryColor = GoogleFonts.muli(
   textStyle: TextStyle(
-    fontSize: getProportionateScreenWidth(36),
+    fontSize: getProportionateScreenWidth(30),
     fontWeight: FontWeight.bold,
     color: kPrimaryColor,
   ),

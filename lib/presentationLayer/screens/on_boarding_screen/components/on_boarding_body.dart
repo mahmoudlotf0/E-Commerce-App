@@ -1,9 +1,9 @@
+import '../../../../constans/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../widgets/custom_size_box.dart';
 import '../../../widgets/defualt_button.dart';
 import '../../login_screen/login_screen.dart';
-import 'dots_indicator.dart';
 import 'on_boarding_content.dart';
 
 class OnBoardingBody extends StatelessWidget {
@@ -13,22 +13,30 @@ class OnBoardingBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            const Spacer(),
-            const OnBoardingContent(),
-            customSizeBox(height: 10),
-            const DotsIndicator(),
-            const Spacer(),
-            DefualtButton(
-              title: 'Continue',
-              height: 60,
-              onTap: () {
-                Navigator.of(context).pushNamed(LoginScreen.routeName);
-              },
-            ),
-          ],
+        child: SizedBox(
+          width: SizeConfig.screenWidth,
+          height: SizeConfig.screenHeight,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              const OnBoardingContent(),
+              buildButton(context),
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  SizedBox buildButton(BuildContext context) {
+    return SizedBox(
+      width: SizeConfig.screenWidth,
+      child: DefualtButton(
+        title: 'Continue',
+        height: 60.h,
+        onTap: () {
+          Navigator.of(context).pushNamed(LoginScreen.routeName);
+        },
       ),
     );
   }

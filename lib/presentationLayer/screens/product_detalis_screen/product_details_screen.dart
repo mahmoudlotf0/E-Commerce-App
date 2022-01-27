@@ -1,20 +1,20 @@
-import 'package:ecommerceapp/businessLogicLayer/cubit/shopcubit_cubit.dart';
-import 'package:ecommerceapp/main.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:like_button/like_button.dart';
 
-import 'package:ecommerceapp/DataLayer/model/product.dart';
-import 'package:ecommerceapp/constans/constans.dart';
-import 'package:ecommerceapp/constans/size_config.dart';
-import 'package:ecommerceapp/presentationLayer/screens/product_detalis_screen/components/build_circle_color.dart';
-import 'package:ecommerceapp/presentationLayer/screens/product_detalis_screen/components/build_number_product.dart';
-import 'package:ecommerceapp/presentationLayer/screens/product_detalis_screen/components/build_rating_and_count_widget.dart';
-import 'package:ecommerceapp/presentationLayer/screens/product_detalis_screen/components/build_sizes_product_widget.dart';
-import 'package:ecommerceapp/presentationLayer/screens/products_screen/components/build_cart_container.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/custom_size_box.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/defualt_button.dart';
-import 'package:ecommerceapp/presentationLayer/widgets/divider_widget.dart';
-import 'package:ecommerceapp/themes/text_styles.dart';
+import '../../../DataLayer/model/product.dart';
+import '../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
+import '../../../constans/constans.dart';
+import '../../../constans/size_config.dart';
+import 'components/build_circle_color.dart';
+import 'components/build_number_product.dart';
+import 'components/build_rating_and_count_widget.dart';
+import 'components/build_sizes_product_widget.dart';
+import '../../widgets/defualt_button.dart';
+import '../../widgets/divider_widget.dart';
+import '../../../themes/text_styles.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   static const String routeName = 'ProductsDetailsScreen';
@@ -35,16 +35,16 @@ class ProductDetailsScreen extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(20),
-                vertical: getProportionateScreenHeight(15),
+                horizontal: 20.r,
+                vertical: 15.r,
               ),
               child: Column(
                 children: [
                   buildHeader(context),
-                  customSizeBox(height: 30),
+                  SizedBox(height: 25.h),
                   buildImage(),
                   const DividerWidget(),
-                  buildTitleWithLikeBurron(),
+                  buildTitleWithLikeBurron(context),
                   buildDescription(),
                   // * Divider
                   const DividerWidget(),
@@ -63,7 +63,7 @@ class ProductDetailsScreen extends StatelessWidget {
                       // TODO: Add product to chart
                     },
                     title: 'Add to Chart',
-                    height: getProportionateScreenHeight(60),
+                    height: 50.h,
                   ),
                 ],
               ),
@@ -78,47 +78,67 @@ class ProductDetailsScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.grey[300],
-          ),
-          child: IconButton(
-            onPressed: () {
-              ShopCubit cubit = ShopCubit.getObjectFromShopCubit(context);
-              Navigator.of(context).pop();
-              cubit.resetNumberProduct();
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              color: kSecondaryColor,
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            // TODO : GO TO CART SCREEN
-          },
-          child: const BuildCartContainer(),
-        ),
+        buildArrowBack(context),
+        buildCartIcon(),
       ],
     );
   }
 
+  Widget buildCartIcon() {
+    return GestureDetector(
+      onTap: () {
+        // TODO: Go To Cart Screen
+      },
+      child: Container(
+        width: 46.w,
+        height: 40.h,
+        decoration: BoxDecoration(
+          color: Colors.grey[50],
+          shape: BoxShape.circle,
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(12.r),
+          child: SvgPicture.asset('assets/icons/Cart Icon.svg'),
+        ),
+      ),
+    );
+  }
+
+  Widget buildArrowBack(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.grey[50],
+      ),
+      child: IconButton(
+        onPressed: () {
+          ShopCubit cubit = ShopCubit.getObjectFromShopCubit(context);
+          Navigator.of(context).pop();
+          cubit.resetNumberProduct();
+        },
+        icon: const Icon(
+          Icons.arrow_back,
+          color: kSecondaryColor,
+        ),
+      ),
+    );
+  }
+
   Widget buildImage() {
-    return customSizeBox(
-      height: SizeConfig.screenHeight * 0.35,
+    return SizedBox(
+      height: 220.h,
       width: SizeConfig.screenWidth,
       child: Image.network(product.image),
     );
   }
 
-  Widget buildLikeButton() {
+  Widget buildLikeButton(BuildContext context) {
     return Container(
-      width: getProportionateScreenWidth(64),
-      height: getProportionateScreenHeight(50),
+      width: 50.w,
+      height: 45.h,
       margin: EdgeInsets.only(
-        bottom: getProportionateScreenHeight(10),
+        bottom: 10.h,
+        left: 10.w,
       ),
       decoration: const BoxDecoration(
         color: Color(0xFFFFE6E6),
@@ -129,16 +149,21 @@ class ProductDetailsScreen extends StatelessWidget {
       ),
       child: LikeButton(
         size: getProportionateScreenWidth(30),
+        onTap: (bool isLiked) async {
+          ShopCubit cubit = ShopCubit.getObjectFromShopCubit(context);
+          cubit.addOrRemoveProuductFromFavourites(product.id);
+          return cubit.isProductFavourite(product.id) ? true : false;
+        },
       ),
     );
   }
 
-  Widget buildTitleWithLikeBurron() {
+  Widget buildTitleWithLikeBurron(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          child: Text(
+          child: AutoSizeText(
             product.title,
             style: kHeadLineTwo.copyWith(
               fontWeight: FontWeight.bold,
@@ -147,15 +172,16 @@ class ProductDetailsScreen extends StatelessWidget {
             maxLines: 3,
           ),
         ),
-        buildLikeButton(),
+        buildLikeButton(context),
       ],
     );
   }
 
   Widget buildDescription() {
-    return Text(
+    return AutoSizeText(
       product.description,
       style: kHeadLineThree,
+      maxLines: 8,
     );
   }
 }

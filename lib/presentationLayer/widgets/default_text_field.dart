@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class DefualtTextField extends StatelessWidget {
@@ -38,25 +39,25 @@ class DefualtTextField extends StatelessWidget {
       decoration: InputDecoration(
         floatingLabelBehavior: FloatingLabelBehavior.always,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(20.0.r),
           borderSide: const BorderSide(
             color: Colors.grey,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20.0),
-          borderSide: const BorderSide(
+          borderRadius: BorderRadius.circular(20.0.r),
+          borderSide: BorderSide(
             color: Colors.grey,
-            width: 2.0,
+            width: 2.0.w,
           ),
         ),
         hintText: hintText,
         labelText: lable,
         labelStyle: const TextStyle(color: Colors.grey),
-        contentPadding: const EdgeInsets.only(
-          left: 40.0,
-          top: 20.0,
-          bottom: 20.0,
+        contentPadding: EdgeInsets.only(
+          left: 40.0.r,
+          top: 20.0.r,
+          bottom: 20.0.r,
         ),
         prefixIcon: Icon(
           prefixIcon,

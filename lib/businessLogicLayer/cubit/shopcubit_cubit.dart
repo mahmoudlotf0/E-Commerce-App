@@ -12,14 +12,14 @@ class ShopCubit extends Cubit<ShopState> {
     return BlocProvider.of<ShopCubit>(context);
   }
 
-  // * bottom navigation bar
+  //* bottom navigation bar
   int currentIndex = 0;
   void onTapBottomNavigationBar(int index) {
     currentIndex = index;
     emit(AppBottomNavigationBarChangeState());
   }
 
-  // * On Boarding Screen
+  //* On Boarding Screen
   int currentPageOfOnBoarding = 0;
   List<Map<String, String>> onBoardingData = [
     {
@@ -69,5 +69,26 @@ class ShopCubit extends Cubit<ShopState> {
   void resetNumberProduct() {
     numberProduct = 0;
     emit(AppNumberProductResetState());
+  }
+
+  //* Favoutite Screen and List
+  List<Product> favouriteProducts = [];
+  void addOrRemoveProuductFromFavourites(int productId) {
+    final exsitingIndex =
+        // ignore: unrelated_type_equality_checks
+        favouriteProducts.indexWhere((product) => product.id == productId);
+    if (exsitingIndex >= 0) {
+      favouriteProducts.removeAt(exsitingIndex);
+      emit(AppRemoveProductInFavouriteState());
+    } else {
+      favouriteProducts
+          // ignore: unrelated_type_equality_checks
+          .add(allProducts.firstWhere((product) => product.id == productId));
+      emit(AppAddProductInFavouriteState());
+    }
+  }
+
+  bool isProductFavourite(int productId) {
+    return favouriteProducts.any((product) => product.id == productId);
   }
 }

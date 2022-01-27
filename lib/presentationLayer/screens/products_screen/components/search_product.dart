@@ -1,5 +1,5 @@
-import 'package:ecommerceapp/constans/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SearchProduct extends StatelessWidget {
@@ -10,11 +10,11 @@ class SearchProduct extends StatelessWidget {
     TextEditingController searchController = TextEditingController();
 
     return Container(
-      width: SizeConfig.screenWidth * 0.6,
-      height: getProportionateScreenHeight(45),
+      width: 220.w,
+      height: 40.h,
       decoration: BoxDecoration(
         color: Colors.grey[300],
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(15.r),
       ),
       child: TextField(
         controller: searchController,
