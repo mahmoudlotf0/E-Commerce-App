@@ -1,15 +1,14 @@
-import 'dart:math';
-
 import 'package:auto_size_text/auto_size_text.dart';
-import '../../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
-import '../../../../constans/constans.dart';
-import '../../../../constans/size_config.dart';
-import '../../product_detalis_screen/product_details_screen.dart';
-import '../../../widgets/cirular_indecator_widget.dart';
-import '../../../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
+import '../../../../constans/constans.dart';
+import '../../../../constans/size_config.dart';
+import '../../../../themes/text_styles.dart';
+import '../../../widgets/cirular_indecator_widget.dart';
+import '../../product_detalis_screen/product_details_screen.dart';
 
 class SpecialProduct extends StatelessWidget {
   final ShopCubit cubit;
@@ -37,34 +36,31 @@ class SpecialProduct extends StatelessWidget {
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    Random random = Random();
-                    index = random.nextInt(19);
-                    return index <= 19
-                        ? GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).pushNamed(
-                                ProductDetailsScreen.routeName,
-                                arguments: cubit.allProducts[index],
-                              );
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                right: 20.r,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  cubit.allProducts[index].image.isNotEmpty
-                                      ? buildImageProduct(index)
-                                      : Image.asset('assets/icons/loading.gif'),
-                                  buildTitle(index),
-                                ],
-                              ),
-                            ),
-                          )
-                        : Container();
+                    index = index + 5;
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(
+                          ProductDetailsScreen.routeName,
+                          arguments: cubit.allProducts[index],
+                        );
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          right: 20.r,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            cubit.allProducts[index].image.isNotEmpty
+                                ? buildImageProduct(index)
+                                : Image.asset('assets/icons/loading.gif'),
+                            buildTitle(index),
+                          ],
+                        ),
+                      ),
+                    );
                   },
-                  itemCount: 5,
+                  itemCount: 7,
                 ),
               ),
             ],

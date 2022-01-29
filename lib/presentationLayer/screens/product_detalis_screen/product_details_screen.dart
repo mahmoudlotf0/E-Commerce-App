@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:like_button/like_button.dart';
 
 import '../../../DataLayer/model/product.dart';
 import '../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
@@ -19,6 +19,7 @@ import '../../../themes/text_styles.dart';
 class ProductDetailsScreen extends StatelessWidget {
   static const String routeName = 'ProductsDetailsScreen';
   final Product product;
+
   const ProductDetailsScreen({required this.product, Key? key})
       : super(key: key);
   @override
@@ -147,13 +148,25 @@ class ProductDetailsScreen extends StatelessWidget {
           bottomLeft: Radius.circular(20),
         ),
       ),
-      child: LikeButton(
-        size: getProportionateScreenWidth(30),
-        onTap: (bool isLiked) async {
-          ShopCubit cubit = ShopCubit.getObjectFromShopCubit(context);
-          cubit.addOrRemoveProuductFromFavourites(product.id);
-          return cubit.isProductFavourite(product.id) ? true : false;
-        },
+      child: BlocConsumer<ShopCubit, ShopState>(
+        listener: (context, state) {},
+        builder: (context, state) => IconButton(
+          onPressed: () {
+            ShopCubit cubit = ShopCubit.getObjectFromShopCubit(context);
+            cubit.addOrRemoveProuductFromFavourites(product.id);
+          },
+          icon: Icon(
+            ShopCubit.getObjectFromShopCubit(context)
+                    .isProductFavourite(product.id)
+                ? Icons.favorite
+                : Icons.favorite_border_outlined,
+            color: ShopCubit.getObjectFromShopCubit(context)
+                    .isProductFavourite(product.id)
+                ? Colors.red
+                : Colors.grey,
+            size: 25.w,
+          ),
+        ),
       ),
     );
   }

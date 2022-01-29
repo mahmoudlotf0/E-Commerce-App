@@ -8,7 +8,6 @@ import '../../../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:like_button/like_button.dart';
 
 class PopularProduct extends StatelessWidget {
   final ShopCubit cubit;
@@ -31,7 +30,7 @@ class PopularProduct extends StatelessWidget {
               SizedBox(height: 20.h),
               SizedBox(
                 width: SizeConfig.screenWidth,
-                height: 160.h,
+                height: 200.h,
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
@@ -58,7 +57,7 @@ class PopularProduct extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 buildPrice(index),
-                                buildLikeButton(),
+                                buildLikeButton(context: context, index: index),
                               ],
                             ),
                           ],
@@ -137,7 +136,7 @@ class PopularProduct extends StatelessWidget {
 
   Widget buildPrice(int index) {
     return SizedBox(
-      width: 120.w,
+      width: 90.w,
       height: 18.h,
       child: AutoSizeText(
         '\$${cubit.allProducts[index].price}',
@@ -155,10 +154,29 @@ class PopularProduct extends StatelessWidget {
     );
   }
 
-  Widget buildLikeButton() {
-    return LikeButton(
-      size: 20.w,
-      // TODO: When tap go to favotite list
+  Widget buildLikeButton({required BuildContext context, required int index}) {
+    return IconButton(
+      onPressed: () {
+        ShopCubit cubit = ShopCubit.getObjectFromShopCubit(context);
+        cubit.addOrRemoveProuductFromFavourites(cubit.allProducts[index].id);
+      },
+      icon: Icon(
+        cubit.isProductFavourite(cubit.allProducts[index].id)
+            ? Icons.favorite
+            : Icons.favorite_border_outlined,
+        color: cubit.isProductFavourite(cubit.allProducts[index].id)
+            ? Colors.red
+            : Colors.grey,
+        size: 22.w,
+      ),
     );
   }
 }
+/*
+        ShopCubit cubit = ShopCubit.getObjectFromShopCubit(context);
+        cubit.addOrRemoveProuductFromFavourites(cubit.allProducts[index].id);
+        return cubit.isProductFavourite(cubit.allProducts[index].id)
+            ? isLiked
+            : !isLiked;
+
+ */
