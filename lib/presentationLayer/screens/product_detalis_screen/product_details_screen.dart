@@ -8,13 +8,13 @@ import '../../../DataLayer/model/product.dart';
 import '../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
 import '../../../constans/constans.dart';
 import '../../../constans/size_config.dart';
+import '../../../themes/text_styles.dart';
+import '../../widgets/defualt_button.dart';
+import '../../widgets/divider_widget.dart';
 import 'components/build_circle_color.dart';
 import 'components/build_number_product.dart';
 import 'components/build_rating_and_count_widget.dart';
 import 'components/build_sizes_product_widget.dart';
-import '../../widgets/defualt_button.dart';
-import '../../widgets/divider_widget.dart';
-import '../../../themes/text_styles.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   static const String routeName = 'ProductsDetailsScreen';

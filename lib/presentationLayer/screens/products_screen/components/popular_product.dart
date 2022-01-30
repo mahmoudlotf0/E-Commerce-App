@@ -172,11 +172,3 @@ class PopularProduct extends StatelessWidget {
     );
   }
 }
-/*
-        ShopCubit cubit = ShopCubit.getObjectFromShopCubit(context);
-        cubit.addOrRemoveProuductFromFavourites(cubit.allProducts[index].id);
-        return cubit.isProductFavourite(cubit.allProducts[index].id)
-            ? isLiked
-            : !isLiked;
-
- */

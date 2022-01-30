@@ -1,58 +1,78 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import '../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
-import '../../../constans/constans.dart';
-import '../../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 
+import 'package:ecommerceapp/presentationLayer/screens/product_detalis_screen/product_details_screen.dart';
+
+import '../../../businessLogicLayer/cubit/shopcubit_cubit.dart';
+import '../../../constans/constans.dart';
+import '../../../themes/text_styles.dart';
+
 class FavouriteScreen extends StatelessWidget {
   const FavouriteScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    ShopCubit cubit = ShopCubit.getObjectFromShopCubit(context);
+    ShopCubit cubit;
 
-    return cubit.favouriteProducts.isEmpty
-        ? buildWidgetWhenNoFavourite()
-        : SafeArea(
-            child: Scaffold(
-              body: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: buildMainPadding(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      buildHeader(context),
-                      SizedBox(height: 25.h),
-                      ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) =>
-                            buildCardItem(cubit, index),
-                        itemCount: cubit.favouriteProducts.length,
+    return BlocConsumer<ShopCubit, ShopState>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        cubit = ShopCubit.getObjectFromShopCubit(context);
+        return cubit.favouriteProducts.isEmpty
+            ? buildWidgetWhenNoFavourite()
+            : SafeArea(
+                child: Scaffold(
+                  body: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: buildMainPadding(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          buildHeader(context),
+                          SizedBox(height: 25.h),
+                          ListView.builder(
+                            physics: const NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) =>
+                                buildCardItem(cubit, index, context),
+                            itemCount: cubit.favouriteProducts.length,
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-          );
+              );
+      },
+    );
   }
 
-  Widget buildCardItem(ShopCubit cubit, int index) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      elevation: 15,
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 10.w,
-          vertical: 10.r,
+  Widget buildCardItem(ShopCubit cubit, int index, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        int productId = cubit.favouriteProducts[index].id - 1;
+        print(productId);
+        Navigator.of(context).pushNamed(
+          ProductDetailsScreen.routeName,
+          arguments: cubit.allProducts[productId],
+        );
+      },
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.r),
         ),
-        child: buildCardContent(cubit, index),
+        elevation: 15,
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 10.w,
+            vertical: 10.r,
+          ),
+          child: buildCardContent(cubit, index),
+        ),
       ),
     );
   }
