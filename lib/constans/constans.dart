@@ -10,3 +10,15 @@ const kSecondaryColor = Color(0xff979797);
 const kTextColor = Color(0xFF757575);
 const kAnimationDuration = Duration(microseconds: 500);
 const String baseUrl = 'https://fakestoreapi.com/';
+List<String> images = [
+  'assets/icons/electronics.jpeg',
+  'assets/icons/jewelery.jpg',
+  'assets/icons/menclothing.jpg',
+  'assets/icons/womenclothing.jpg',
+];
+List<String> categoryName = [
+  'Electronics',
+  'Jewelery',
+  'Men\'s clothing',
+  'Women\'s clothing',
+];

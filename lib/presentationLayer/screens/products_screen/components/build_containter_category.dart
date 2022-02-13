@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ecommerceapp/presentationLayer/screens/category_screen/category_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,7 +11,7 @@ class BuildContainerCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // TODO: Move to Category Screen
+        Navigator.of(context).pushNamed(CategoryScreen.routeName);
       },
       child: Container(
         width: double.infinity,

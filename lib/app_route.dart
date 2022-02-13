@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/presentationLayer/screens/category_screen/category_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'DataLayer/model/product.dart';
@@ -24,10 +25,11 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => const ProductsScreen());
       case ProductDetailsScreen.routeName:
         final Product product = settings.arguments as Product;
-
         return MaterialPageRoute(
           builder: (_) => ProductDetailsScreen(product: product),
         );
+      case CategoryScreen.routeName:
+        return MaterialPageRoute(builder: (_) => const CategoryScreen());
     }
   }
 }
