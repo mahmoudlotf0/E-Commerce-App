@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:ecommerceapp/constans/constans.dart';
 import 'package:ecommerceapp/constans/size_config.dart';
+import 'package:ecommerceapp/presentationLayer/screens/category_details_screen/category_details_screen.dart';
 import 'package:ecommerceapp/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,36 +12,41 @@ class CategoryScreen extends StatelessWidget {
   const CategoryScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(context),
-      body: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              // TODO: GO TO SPEICAL CATEGORY
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 15.r,
-                vertical: 5.r,
-              ),
-              width: SizeConfig.screenWidth,
-              height: SizeConfig.screenHeight * 0.22,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.r),
-                child: Stack(
-                  children: [
-                    buildImage(index),
-                    buildShadow(),
-                    buildTitle(index),
-                  ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: buildAppBar(context),
+        body: ListView.builder(
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(
+                  CategoryDetailsscreen.routeName,
+                  arguments: categoryName[index],
+                );
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 15.r,
+                  vertical: 5.r,
+                ),
+                width: SizeConfig.screenWidth,
+                height: SizeConfig.screenHeight * 0.22,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.r),
+                  child: Stack(
+                    children: [
+                      buildImage(index),
+                      buildShadow(),
+                      buildTitle(index),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          );
-        },
-        itemCount: 4,
+            );
+          },
+          itemCount: 4,
+        ),
       ),
     );
   }
@@ -55,7 +61,7 @@ class CategoryScreen extends StatelessWidget {
         categoryName[index],
         style: GoogleFonts.muli(
           textStyle: const TextStyle(
-            color: Colors.white70,
+            color: Colors.white,
             fontSize: 30.0,
           ),
         ),
