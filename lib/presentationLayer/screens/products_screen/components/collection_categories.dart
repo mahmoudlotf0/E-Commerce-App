@@ -12,19 +12,19 @@ class CollectionCategories extends StatelessWidget {
       children: const [
         BuildCategoryItem(
           imagePath: 'assets/icons/elctric.png',
-          lable: 'Electronics\n',
+          lable: 'Electronics',
         ),
         BuildCategoryItem(
           imagePath: 'assets/icons/rings.png',
-          lable: 'Jewelery\n',
+          lable: 'Jewelery',
         ),
         BuildCategoryItem(
           imagePath: 'assets/icons/shirt.png',
-          lable: 'Men\'s \nclothing',
+          lable: 'Men\'s clothing',
         ),
         BuildCategoryItem(
           imagePath: 'assets/icons/dress.png',
-          lable: 'Women\'s \nclothing',
+          lable: 'Women\'s clothing',
         ),
       ],
     );

@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'package:ecommerceapp/presentationLayer/screens/category_details_screen/category_details_screen.dart';
 import 'package:ecommerceapp/presentationLayer/screens/category_screen/category_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:ecommerceapp/presentationLayer/screens/chart_screen/chart_screen.dart';
 
 import 'DataLayer/model/product.dart';
 import 'presentationLayer/screens/login_screen/login_screen.dart';
@@ -34,9 +36,12 @@ class AppRoute {
       case CategoryDetailsscreen.routeName:
         final String title = settings.arguments as String;
         return MaterialPageRoute(
-            builder: (_) => CategoryDetailsscreen(
-                  title: title,
-                ));
+          builder: (_) => CategoryDetailsscreen(
+            title: title,
+          ),
+        );
+      case ChartScreen.routeName:
+        return MaterialPageRoute(builder: (_) => const ChartScreen());
     }
   }
 }

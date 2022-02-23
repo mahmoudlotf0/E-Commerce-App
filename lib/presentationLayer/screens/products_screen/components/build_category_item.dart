@@ -1,5 +1,4 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:ecommerceapp/constans/constans.dart';
 import 'package:ecommerceapp/presentationLayer/screens/category_details_screen/category_details_screen.dart';
 import '../../../../themes/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -19,20 +18,28 @@ class BuildCategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          margin: EdgeInsets.only(bottom: 5.r),
-          height: 60.h,
-          width: 70.w,
-          decoration: BoxDecoration(
-            color: Colors.pink[100],
-            borderRadius: BorderRadius.circular(30.r),
-          ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 15.r,
-              vertical: 15.r,
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushNamed(
+              CategoryDetailsscreen.routeName,
+              arguments: lable,
+            );
+          },
+          child: Container(
+            margin: EdgeInsets.only(bottom: 5.r),
+            height: 60.h,
+            width: 70.w,
+            decoration: BoxDecoration(
+              color: Colors.pink[100],
+              borderRadius: BorderRadius.circular(30.r),
             ),
-            child: buildIcone(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 15.r,
+                vertical: 15.r,
+              ),
+              child: buildIcone(),
+            ),
           ),
         ),
         buildTitleOfIcon(),
@@ -41,13 +48,16 @@ class BuildCategoryItem extends StatelessWidget {
   }
 
   Widget buildTitleOfIcon() {
-    return AutoSizeText(
-      lable,
-      style: GoogleFonts.muli(
-        textStyle: kHeadLineThree,
+    return SizedBox(
+      width: 60.w,
+      child: AutoSizeText(
+        lable,
+        style: GoogleFonts.muli(
+          textStyle: kHeadLineThree,
+        ),
+        textAlign: TextAlign.center,
+        maxLines: 1,
       ),
-      textAlign: TextAlign.center,
-      maxLines: 2,
     );
   }
 

@@ -1,13 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
+
 import 'package:ecommerceapp/DataLayer/model/product.dart';
 import 'package:ecommerceapp/businessLogicLayer/cubit/shopcubit_cubit.dart';
 import 'package:ecommerceapp/constans/constans.dart';
 import 'package:ecommerceapp/presentationLayer/screens/product_detalis_screen/product_details_screen.dart';
 import 'package:ecommerceapp/themes/text_styles.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 
 class CategoryDetailsscreen extends StatelessWidget {
   static const String routeName = 'CategoryDetailsScreen';
