@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ecommerceapp/presentationLayer/screens/cart_screen/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -65,7 +66,7 @@ class FavouriteScreen extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.r),
         ),
-        elevation: 15,
+        elevation: 8,
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: 10.w,
@@ -231,7 +232,7 @@ class FavouriteScreen extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            // TODO: Go To Cart Screen
+            Navigator.of(context).pushNamed(CartScreen.routeName);
           },
           child: Container(
             width: 46.w,

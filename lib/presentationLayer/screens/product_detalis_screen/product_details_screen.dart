@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:ecommerceapp/presentationLayer/screens/cart_screen/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -80,15 +81,15 @@ class ProductDetailsScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         buildArrowBack(context),
-        buildCartIcon(),
+        buildCartIcon(context),
       ],
     );
   }
 
-  Widget buildCartIcon() {
+  Widget buildCartIcon(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // TODO: Go To Cart Screen
+        Navigator.of(context).pushNamed(CartScreen.routeName);
       },
       child: Container(
         width: 46.w,

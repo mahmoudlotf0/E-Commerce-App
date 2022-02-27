@@ -1,4 +1,4 @@
-import 'package:ecommerceapp/presentationLayer/screens/chart_screen/chart_screen.dart';
+import 'package:ecommerceapp/presentationLayer/screens/cart_screen/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -10,7 +10,7 @@ class BuildCartContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(ChartScreen.routeName);
+        Navigator.of(context).pushNamed(CartScreen.routeName);
       },
       child: Container(
         width: 46.w,
