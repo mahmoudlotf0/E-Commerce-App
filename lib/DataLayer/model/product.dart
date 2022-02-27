@@ -6,6 +6,7 @@ class Product {
   late String category;
   late String image;
   late Map<String, dynamic> rating;
+  late dynamic quantity;
 
   Product.fromJson(Map<String, dynamic> json) {
     id = json['id'];

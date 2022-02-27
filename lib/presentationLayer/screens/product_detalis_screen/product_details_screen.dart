@@ -62,7 +62,9 @@ class ProductDetailsScreen extends StatelessWidget {
                   const BuildNumberProduct(),
                   DefualtButton(
                     onTap: () {
-                      // TODO: Add product to chart
+                      final cubit = ShopCubit.getObjectFromShopCubit(context);
+                      product.quantity = cubit.numberProduct;
+                      cubit.addOrRemoveProuductFromChart(product.id);
                     },
                     title: 'Add to Chart',
                     height: 50.h,

@@ -22,3 +22,7 @@ class AppBottomNavigationBarChangeState extends ShopState {}
 class AppAddProductInFavouriteState extends ShopState {}
 
 class AppRemoveProductInFavouriteState extends ShopState {}
+
+class AppAddProductInChartState extends ShopState {}
+
+class AppRemoveProductInChartState extends ShopState {}

@@ -91,4 +91,19 @@ class ShopCubit extends Cubit<ShopState> {
   bool isProductFavourite(int productId) {
     return favouriteProducts.any((product) => product.id == productId);
   }
+
+  //* Chart Screen and List
+  List<Product> chartProducts = [];
+  void addOrRemoveProuductFromChart(int productId) {
+    final exsitingIndex =
+        // ignore: unrelated_type_equality_checks
+        chartProducts.indexWhere((product) => product.id == productId);
+    if (exsitingIndex >= 0) {
+    } else {
+      chartProducts
+          // ignore: unrelated_type_equality_checks
+          .add(allProducts.firstWhere((product) => product.id == productId));
+      emit(AppAddProductInChartState());
+    }
+  }
 }
