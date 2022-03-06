@@ -12,34 +12,34 @@ TextStyle kHeadLine = GoogleFonts.muli(
 );
 
 TextStyle kHeadLineOneWithPrimaryColor = GoogleFonts.muli(
-  textStyle: TextStyle(
-    fontSize: getProportionateScreenWidth(30),
+  textStyle: const TextStyle(
+    fontSize: 30,
     fontWeight: FontWeight.bold,
     color: kPrimaryColor,
   ),
 );
 TextStyle kHeadLineTwo = GoogleFonts.muli(
-  textStyle: TextStyle(
-    fontSize: getProportionateScreenWidth(20),
+  textStyle: const TextStyle(
+    fontSize: 20,
     color: kTextColor,
   ),
 );
 TextStyle kHeadLineThree = GoogleFonts.muli(
-  textStyle: TextStyle(
-    fontSize: getProportionateScreenWidth(14),
+  textStyle: const TextStyle(
+    fontSize: 14,
     color: kTextColor,
     fontWeight: FontWeight.bold,
   ),
 );
 TextStyle kHeadLineThreeWithPrimaryColor = GoogleFonts.muli(
-  textStyle: TextStyle(
-    fontSize: getProportionateScreenWidth(14),
+  textStyle: const TextStyle(
+    fontSize: 14,
     color: kPrimaryColor,
   ),
 );
 TextStyle kHeadLineFour = GoogleFonts.muli(
-  textStyle: TextStyle(
-    fontSize: getProportionateScreenWidth(14),
+  textStyle: const TextStyle(
+    fontSize: 14,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   ),

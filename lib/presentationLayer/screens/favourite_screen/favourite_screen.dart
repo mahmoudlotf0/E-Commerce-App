@@ -230,23 +230,7 @@ class FavouriteScreen extends StatelessWidget {
           style: kHeadLineOneWithPrimaryColor,
           maxLines: 1,
         ),
-        GestureDetector(
-          onTap: () {
-            Navigator.of(context).pushNamed(CartScreen.routeName);
-          },
-          child: Container(
-            width: 46.w,
-            height: 40.h,
-            decoration: BoxDecoration(
-              color: Colors.grey[50],
-              shape: BoxShape.circle,
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(12.r),
-              child: SvgPicture.asset('assets/icons/Cart Icon.svg'),
-            ),
-          ),
-        ),
+        SizedBox(width: 20.w),
       ],
     );
   }

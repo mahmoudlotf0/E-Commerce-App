@@ -33,7 +33,7 @@ class BuildNumberProduct extends StatelessWidget {
                 buildCircleButton(
                   cubit: cubit,
                   function: () {
-                    if (cubit.numberProduct > 0) {
+                    if (cubit.numberProduct > 1) {
                       cubit.decreaseNumberProduct();
                     }
                   },

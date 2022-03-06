@@ -65,6 +65,7 @@ class ProductDetailsScreen extends StatelessWidget {
                       final cubit = ShopCubit.getObjectFromShopCubit(context);
                       product.quantity = cubit.numberProduct;
                       cubit.addOrRemoveProuductFromChart(product.id);
+                      // TODO: Add Snak bar
                     },
                     title: 'Add to Chart',
                     height: 50.h,
