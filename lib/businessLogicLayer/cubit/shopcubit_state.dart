@@ -26,3 +26,9 @@ class AppRemoveProductInFavouriteState extends ShopState {}
 class AppAddProductInChartState extends ShopState {}
 
 class AppRemoveProductInChartState extends ShopState {}
+
+class AppRemoveProductIdFormSharedPreferences extends ShopState {}
+
+class AppAddProductIdFormSharedPreferences extends ShopState {}
+
+class AppGetFavouriteProductsFormSharedPrefs extends ShopState {}

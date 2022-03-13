@@ -210,27 +210,29 @@ class FavouriteScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.grey[50],
-          ),
-          child: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              color: kSecondaryColor,
-            ),
-          ),
-        ),
+        SizedBox(width: 20.w),
         AutoSizeText(
           'My Favourits',
           style: kHeadLineOneWithPrimaryColor,
           maxLines: 1,
         ),
-        SizedBox(width: 20.w),
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushNamed(CartScreen.routeName);
+          },
+          child: Container(
+            width: 46.w,
+            height: 40.h,
+            decoration: BoxDecoration(
+              color: Colors.grey[50],
+              shape: BoxShape.circle,
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(12.r),
+              child: SvgPicture.asset('assets/icons/Cart Icon.svg'),
+            ),
+          ),
+        ),
       ],
     );
   }

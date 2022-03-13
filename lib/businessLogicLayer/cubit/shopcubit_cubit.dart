@@ -55,7 +55,7 @@ class ShopCubit extends Cubit<ShopState> {
   }
 
   //* Number Product
-  int numberProduct = 0;
+  int numberProduct = 1;
   void increaseNumberProduct() {
     numberProduct++;
     emit(AppNumberProductIncreaceState());
@@ -67,22 +67,21 @@ class ShopCubit extends Cubit<ShopState> {
   }
 
   void resetNumberProduct() {
-    numberProduct = 0;
+    numberProduct = 1;
     emit(AppNumberProductResetState());
   }
 
-  //* Favoutite Screen and List
+  //* Favoutite Screen
   List<Product> favouriteProducts = [];
+  List<String> prefsProductId = [];
   void addOrRemoveProuductFromFavourites(int productId) {
-    final exsitingIndex =
-        // ignore: unrelated_type_equality_checks
+    final int exsitingIndex =
         favouriteProducts.indexWhere((product) => product.id == productId);
     if (exsitingIndex >= 0) {
       favouriteProducts.removeAt(exsitingIndex);
       emit(AppRemoveProductInFavouriteState());
     } else {
       favouriteProducts
-          // ignore: unrelated_type_equality_checks
           .add(allProducts.firstWhere((product) => product.id == productId));
       emit(AppAddProductInFavouriteState());
     }
@@ -92,7 +91,7 @@ class ShopCubit extends Cubit<ShopState> {
     return favouriteProducts.any((product) => product.id == productId);
   }
 
-  //* Chart Screen and List
+  //* Chart Screen
   List<Product> chartProducts = [];
   void addOrRemoveProuductFromChart(int productId) {
     final exsitingIndex =

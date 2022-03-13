@@ -65,7 +65,18 @@ class ProductDetailsScreen extends StatelessWidget {
                       final cubit = ShopCubit.getObjectFromShopCubit(context);
                       product.quantity = cubit.numberProduct;
                       cubit.addOrRemoveProuductFromChart(product.id);
-                      // TODO: Add Snak bar
+                      final SnackBar snackBar = SnackBar(
+                        content: AutoSizeText(
+                          'Product Added',
+                          style: kHeadLineTwo.copyWith(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                        backgroundColor: const Color(0xFF874356),
+                        duration: const Duration(milliseconds: 800),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
                     title: 'Add to Chart',
                     height: 50.h,

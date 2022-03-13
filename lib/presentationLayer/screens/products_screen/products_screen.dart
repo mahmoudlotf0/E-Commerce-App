@@ -20,7 +20,6 @@ class ProductsScreen extends StatelessWidget {
   static const String routeName = 'ProductsScreen';
 
   const ProductsScreen({Key? key}) : super(key: key);
-  // TODO: Add RefreshIndicatior Widget to Get All Prodcut
   @override
   Widget build(BuildContext context) {
     return OfflineBuilder(
