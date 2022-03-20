@@ -18,19 +18,19 @@ class ProfileContent extends StatelessWidget {
           title: 'My Account',
         ),
         const ProfileMenuItem(
-          svgPicture: 'assets/icons/User Icon.svg',
+          svgPicture: 'assets/icons/Bell.svg',
           title: 'Notifications',
         ),
         const ProfileMenuItem(
-          svgPicture: 'assets/icons/User Icon.svg',
+          svgPicture: 'assets/icons/Settings.svg',
           title: 'Settings',
         ),
         const ProfileMenuItem(
-          svgPicture: 'assets/icons/User Icon.svg',
+          svgPicture: 'assets/icons/Question mark.svg',
           title: 'Help Center',
         ),
         const ProfileMenuItem(
-          svgPicture: 'assets/icons/User Icon.svg',
+          svgPicture: 'assets/icons/Log out.svg',
           title: 'Log Out',
         ),
       ],
