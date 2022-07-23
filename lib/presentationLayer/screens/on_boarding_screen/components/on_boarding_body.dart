@@ -1,3 +1,5 @@
+import 'package:ecommerceapp/presentationLayer/screens/products_screen/products_screen.dart';
+
 import '../../../../constans/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,7 +37,7 @@ class OnBoardingBody extends StatelessWidget {
         title: 'Continue',
         height: 60.h,
         onTap: () {
-          Navigator.of(context).pushNamed(LoginScreen.routeName);
+          Navigator.of(context).pushNamed(ProductsScreen.routeName);
         },
       ),
     );
